@@ -74,9 +74,9 @@
 
     <div class="whole-page-overlay" id="whole_page_loader">
         <div>
-            <h2 style="color:#d35400;">Online Meeting System</h2>
+            <h2 style="color:#d35400;">نظام الفتاوي</h2>
             <img class="center-loader"  style="height:100px;" src="{{ URL::asset('images/loader.gif') }}"/>
-            <p style="color: #c0392b;">please Wait</p>
+            <p style="color: #c0392b;">من فضلك انتظر</p>
         </div>
     </div>
     <!-- container-scroller -->
@@ -86,7 +86,9 @@
     <script id='input-errors' data-errorMSG="{{ __('placeholder.Please Fill out This Field') }}">
         $(function(){
             $( window ).on("load",function(){
-                $('.whole-page-overlay').slideUp();
+                setTimeout(function(){
+                    $('.whole-page-overlay').slideUp();
+                }, 500);
             });
 
             $(document).click(function(){
