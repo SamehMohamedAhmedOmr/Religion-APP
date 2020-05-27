@@ -34,14 +34,14 @@
                                         flex-grow-1 align-items-center justify-content-center p-3 item"
                                         style="background-color: #778beb; color: #fff;"
                                     >
-                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                        <div class="d-flex flex-column justify-content-around">
+                                        <i class="fas fa-code-branch mx-3 icon-md"></i>
+                                        <div class="d-flex flex-column justify-content-around text-center">
                                             <small class="mb-1">
                                                 {{ __('admin.branches') }}
                                             </small>
                                             <div class="dropdown">
                                                 <h5 class="mb-0 d-inline-block">
-                                                    0
+                                                    {{ $branches }}
                                                 </h5>
                                             </div>
                                         </div>
@@ -53,13 +53,15 @@
                                         flex-grow-1 align-items-center justify-content-center p-3 item"
                                         style="background-color: #cf6a87; color: #fff;"
                                     >
-                                        <i class="mdi mdi-home-variant mr-3 icon-lg text-danger"></i>
-                                        <div class="d-flex flex-column justify-content-around">
+                                        <i class="fas fa-copy mx-3 icon-md"></i>
+                                        <div class="d-flex flex-column justify-content-around text-center">
                                             <small
                                                 class="mb-1">
                                                 {{ __('admin.chapters') }}
                                             </small>
-                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                            <h5 class="mr-2 mb-0">
+                                                {{ $chapters }}
+                                            </h5>
                                         </div>
                                     </div>
 
@@ -73,13 +75,15 @@
                                         flex-grow-1 align-items-center justify-content-center p-3 item"
                                         style="background-color: #e77f67; color: #fff;"
                                     >
-                                        <i class="mdi mdi-format-section mr-3 icon-lg text-success"></i>
-                                        <div class="d-flex flex-column justify-content-around">
+                                        <i class="fas fa-sticky-note mx-3 icon-md"></i>
+                                        <div class="d-flex flex-column justify-content-around text-center">
                                             <small
                                                 class="mb-1">
                                                 {{ __('admin.sections') }}
                                             </small>
-                                            <h5 class="mr-2 mb-0">0</h5>
+                                            <h5 class="mr-2 mb-0">
+                                                {{ $sections }}
+                                            </h5>
                                         </div>
                                     </div>
 
@@ -89,13 +93,15 @@
                                         flex-grow-1 align-items-center justify-content-center p-3 item"
                                         style="background-color: #786fa6; color: #fff;"
                                     >
-                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                        <div class="d-flex flex-column justify-content-around">
+                                        <i class="fas fa-keyboard mx-3 icon-md"></i>
+                                        <div class="d-flex flex-column justify-content-around text-center">
                                             <small
                                                 class="mb-1">
                                                 {{__("admin.keywords")}}
                                             </small>
-                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                            <h5 class="mr-2 mb-0">
+                                                {{ $keywords }}
+                                            </h5>
                                         </div>
                                     </div>
 
@@ -109,13 +115,15 @@
                                         flex-grow-1 align-items-center justify-content-center p-3 item"
                                         style="background-color: #63cdda; color: #fff;"
                                     >
-                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                        <div class="d-flex flex-column justify-content-around">
+                                        <i class="fas fa-question-circle mx-3 icon-md"></i>
+                                        <div class="d-flex flex-column justify-content-around text-center">
                                             <small
                                                 class="mb-1">
                                                 {{__("admin.Questions")}}
                                             </small>
-                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                            <h5 class="mr-2 mb-0">
+                                                {{ $questions }}
+                                            </h5>
                                         </div>
                                     </div>
 

@@ -17,4 +17,8 @@ class Question extends Model
         return $this->belongsTo(Section::class,'section_id','id');
     }
 
+    public function keywords(){
+        return $this->belongsToMany(Keyword::class,'questions_keywords','question_id','keyword_id')
+            ->using(QuestionKeyword::class);
+    }
 }
