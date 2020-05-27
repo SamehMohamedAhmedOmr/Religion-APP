@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 use Validator;
 use Storage;
 use Exception;
@@ -17,7 +18,7 @@ class FacultyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function index(Request $request)
     {
@@ -33,7 +34,7 @@ class FacultyController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function create()
     {
@@ -76,7 +77,7 @@ class FacultyController extends Controller
      *
      * @param  int  $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function show($id)
     {
@@ -88,7 +89,7 @@ class FacultyController extends Controller
      *
      * @param  int  $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function edit($id)
     {
