@@ -12,4 +12,8 @@ class Branch extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function chapters(){
+        return $this->hasMany(Chapter::class,'branch_id','id');
+    }
 }
