@@ -6,7 +6,7 @@
 @endsection
 
 @section('pageTitle')
-{{ __('admin.faculties') }} | {{ __('admin.Edit Faculty') }}
+{{ __('admin.faculties') }} | {{ __('admin.Add new Faculty') }}
 @endsection
 
 @section('content')
@@ -16,31 +16,29 @@
         <div class="row">
             <div class="col-md-12 grid-margin">
                 <div class="card">
-                    <div class="card-header top-card">{{ __('admin.Edit Faculty') }}
-                        <span class="name">{{ $faculty->faculty_name }}</span>
-                    </div>
+                    <div class="card-header top-card">{{ __('admin.Add new Faculty') }}</div>
                     <div class="card-body">
-                        <div class="mb-3">
+                        <div class="p-3">
                             <a class='back-button' href="{{ url('faculty') }}" title="Back">
-                                <button class="btn btn-warning btn-sm" >
+                                <button class="btn btn-warning btn-sm">
                                     <i class="fa fa-arrow-left" aria-hidden="true"></i> {{ __('home.Back') }}
                                 </button>
                             </a>
                         </div>
 
                         @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('faculty/' . $faculty->id) }}" accept-charset="UTF-8" class="form-horizontal custom-form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
+                        <form method="POST" action="{{ url('faculty') }}" accept-charset="UTF-8" class="form-horizontal custom-form"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.faculty.form', ['formMode' => 'edit'])
+                            @include ('admin.branch.form', ['formMode' => 'create'])
 
                         </form>
 
@@ -49,23 +47,18 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('scripts')
-    <script id='scriptToFile' type="text/javascript" data-lang = "{{ (App::getLocale() == 'ar')?'ar':'en' }}"
-    data-img = '<img src="{{ URL::asset('storage/faculty_pic/'.$faculty->id.'/'.$faculty->logo.'') }}" > '>
+    <script id='scriptToFile' type="text/javascript" data-lang = "{{ (App::getLocale() == 'ar')?'ar':'en' }}" >
         $(function () {
-            var dom = $('#scriptToFile');
-            var lang = dom.data('lang');
-            var img = dom.data('img');
+            var lang = $('#scriptToFile').data('lang');
             $("#my-file-selector").fileinput({
                 theme: "fas",
                 maxFileCount: 1,
                 allowedFileExtensions: ["JPEG", "JPG", "PNG"],
                 language: lang,
-                initialPreview: [
-                    img,
-                ],
             });
         });
     </script>

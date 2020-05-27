@@ -8,22 +8,7 @@
                </a>
            </li>
 
-           @if(Auth::user()->type ==0)
-           <!-- Admin links -->
-
-           @include('layouts.admin-menu')
-
-           @elseif(Auth::user()->type ==1)
-           <!-- staff links -->
-
-           @include('layouts.staff-menu')
-
-           @elseif(Auth::user()->type ==2)
-           <!-- member links -->
-           @include('layouts.member-menu')
-           @endif
-
-           {{-- @include('layouts.temporal') --}}
+            @include('layouts.admin-menu')
 
        </ul>
    </nav>

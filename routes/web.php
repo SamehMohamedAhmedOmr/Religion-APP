@@ -33,116 +33,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/', 'DashboardController@welcome');
 
 
-    // both Staff & admin $ members
-
-    Route::middleware('AdminStaff')->group(function () {
-
-        Route::get('councilDefinition', 'CouncilDefinitionController@index');
-        Route::get('councilDefinition/{id}', 'CouncilDefinitionController@show');
-        Route::get('getCouncielDefinitionAjax', 'CouncilDefinitionController@getCouncielDefinitionAjax');
-    });
-    // Admin
-    Route::middleware('admin')->group(function () { //type = 0
-        Route::resource('users', 'UserMemberController');
-        Route::get('getUsersAjax', 'UserMemberController@getUsersAjax');
-
-        Route::resource('department', 'DepartmentController');
-        Route::get('getDepartmentAjax', 'DepartmentController@getDepartmentAjax');
-
-        Route::resource('faculty', 'FacultyController');
-        Route::get('getFacultyAjax', 'FacultyController@getFacultyAjax');
-
-        // Council-Definition
-        Route::get('createCouncilDefinition', 'CouncilDefinitionController@create');
-        Route::post('councilDefinition', 'CouncilDefinitionController@store');
-        Route::get('councilDefinition/{id}/edit', 'CouncilDefinitionController@edit');
-        Route::patch('councilDefinition/{id}', 'CouncilDefinitionController@update');
-        Route::delete('councilDefinition/{id}', 'CouncilDefinitionController@destroy');
-
-        // Council-member
-        Route::get('councilmember/{id}/edit', 'CouncilmemberController@edit');
-        Route::post('updateCouncilMember/{id}', 'CouncilmemberController@update');
-        Route::get('councilmember/create/{id}', 'CouncilmemberController@create');
-        Route::post('addCouncilMember/{id}', 'CouncilmemberController@store');
-        Route::post('deleteMember', 'CouncilmemberController@destroy');
-
-        // Council-Chairman
-        Route::get('councilChairman/create/{id}', 'CouncilmemberController@createCouncilMember');
-        Route::post('addCouncilChairman/{id}', 'CouncilmemberController@StoreChairman');
-//dashboard
-        Route::get('cleanslate', 'DashboardController@CleanSlate');
-        Route::get('deletefirebase', 'DashboardController@deletefirebase');
-        Route::get('deletenotification', 'DashboardController@deletenotification');
+    Route::resource('users', 'UserMemberController');
+    Route::resource('branches', 'BranchController');
+    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
 
 
-    });
-
-    // Staff
-    Route::middleware('Staff')->group(function () { // type = 1
-        Route::resource('position', 'PositionController');
-        Route::get('getPositionAjax', 'PositionController@getPositionAjax');
-
-        Route::resource('rank', 'RankController');
-        Route::get('getRankAjax', 'RankController@getRankAjax');
-
-        Route::resource('subjectType', 'SubjectTypeController');
-        Route::get('getSubjectTypeAjax', 'SubjectTypeController@getSubjectTypeAjax');
-
-        // meeting Controller
-        Route::get('meeting/create', 'CouncilMeetingSetupController@create');
-        Route::post('meeting', 'CouncilMeetingSetupController@store');
-        Route::get('meeting/{id}/edit', 'CouncilMeetingSetupController@edit');
-        Route::patch('meeting/{id}', 'CouncilMeetingSetupController@update');
-        Route::delete('meeting/{id}', 'CouncilMeetingSetupController@destroy');
-        Route::post('closeMeeting/{id}', 'CouncilMeetingSetupController@closeMeeing');
-        Route::post('openMeeting/{id}', 'CouncilMeetingSetupController@openMeeting');
-        Route::post('suggetMeetingNumber', 'CouncilMeetingSetupController@suggetMeetingNumber');
-
-        // meeting Attendence
-        Route::post('meetingAttendence/{id}', 'CouncilMeetingSetupController@attendence');
-
-        // meeting Subject
-        Route::get('meetingSubject/create/{id}','CouncilMeetingSubjectController@create');
-        Route::post('meetingSubject/store','CouncilMeetingSubjectController@store');
-        Route::post('meetingSubject/delete','CouncilMeetingSubjectController@destroy');
-        Route::post('addSubjectAttachment','CouncilMeetingSubjectController@addAttachment');
-        Route::post('meetingAttachment/delete/{id}/{type}','SubjectAttachmentController@destroy');
-        Route::get('meetingSubject/edit/{id}','CouncilMeetingSubjectController@edit');
-        Route::post('updateMeetingSubject','CouncilMeetingSubjectController@update');
-
-        Route::get('meetingSubject/finalDesicion/{id}','CouncilMeetingSubjectController@finalDecisionPage');
-        Route::post('addFinalDecision','CouncilMeetingSubjectController@addFinalDecision');
-    });
-
-
-    // members
-    Route::middleware('members')->group(function () { // members , type = 2
-
-        Route::get('addVote', 'VotesController@store');
-        Route::get('meetingSubject/redirect/{id}','CouncilMeetingSubjectController@show');
-
-    });
-
-
-    Route::middleware('MemberStaff')->group(function () {
-        Route::get('meeting', 'CouncilMeetingSetupController@index');
-        Route::get('meeting/{id}', 'CouncilMeetingSetupController@show');
-        Route::get('getCouncielMeetingAjax', 'CouncilMeetingSetupController@getCouncielMeetingAjax');
-        Route::get('downloadAttachment/{subjectID}/{attachmentID}', 'SubjectAttachmentController@downloadAttachment');
-    });
-
-    /*  DONE ROUTES */
-    Route::get('firebase/{id}','FirebaseController@index');
-    Route::get('chat/{id}','FirebaseController@chat');
-
-    // Route::get('test', function () {
-    //     return event(new App\Events\Councilcreated('Someone has added u to group',101,'Event','home'));
-    // });
-
-    Route::get('updateseen', 'Controller@updateseen');
-    Route::get('watchNotification', 'Controller@watchNotification');
-
-    Route::get('pdf', 'Controller@files');
 
 });
 
@@ -182,11 +77,5 @@ Route::get('mdi', function () {
 Route::get('translations', function () {
     return view('vendor.translation-manager.index');
 });
-//
-Route::get('topics/{index}/{meeting}', 'SubjecttopicController@index');
-Route::get('topicsdelete/{id}', 'SubjecttopicController@destroy');
-Route::get('topics/create/{id}/{index}/{app}', 'SubjecttopicController@create');
-Route::get('search', 'Controller@search');
 
-Route::post('topics/store/{id}', 'SubjecttopicController@store');
 //Route::resource('topics/{index}', 'SubjecttopicController');

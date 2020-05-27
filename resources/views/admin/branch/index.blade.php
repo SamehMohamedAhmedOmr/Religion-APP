@@ -24,7 +24,7 @@
                     <div class="card-header top-card">{{ __('admin.faculties') }}</div>
                     <div class="card-body">
                         <div class="p-3 add-new">
-                            <a href="{{ url('faculty/create') }}" class="btn btn-success btn-sm" title="{{ __('admin.Add new Faculty') }}">
+                            <a href="{{ url('branches/create') }}" class="btn btn-success btn-sm" title="{{ __('admin.Add new Faculty') }}">
                                 <i class="fa fa-plus" aria-hidden="true"></i> {{ __('admin.Add new Faculty') }}
                             </a>
                         </div>

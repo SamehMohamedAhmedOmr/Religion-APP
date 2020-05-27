@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @method static findOrFail(int $id)
+ */
 class Branch extends Model
 {
     use SoftDeletes;

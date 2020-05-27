@@ -1,18 +1,11 @@
-<!-- users -->
+<!-- Branches -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ url('users') }}">
-        <i class="mdi mdi-account-multiple menu-icon"></i>
-        <span class="menu-title">{{ __('admin.Users') }}</span>
-    </a>
-</li>
-
-<!-- faculty -->
-<li class="nav-item">
-    <a class="nav-link" href="{{ url('faculty') }}">
+    <a class="nav-link" href="{{ url('branches') }}">
         <i class="fas fa-graduation-cap menu-icon" style="font-size:0.9rem !important;"></i>
         <span class="menu-title">{{ __('admin.faculties') }}</span>
     </a>
 </li>
+
 
 <!-- Department -->
 <li class="nav-item">
