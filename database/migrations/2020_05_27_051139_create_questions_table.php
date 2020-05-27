@@ -16,6 +16,14 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->unsignedInteger('branch_id');
+            $table->foreign('branch_id')->references('id')->on('branches')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedInteger('chapter_id');
+            $table->foreign('chapter_id')->references('id')->on('chapters')
+                ->onDelete('cascade')->onUpdate('cascade');
+
             $table->unsignedInteger('section_id');
             $table->foreign('section_id')->references('id')->on('sections')
                 ->onDelete('cascade')->onUpdate('cascade');

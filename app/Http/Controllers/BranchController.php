@@ -7,7 +7,7 @@ use App\Models\Branch;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
-use Illuminate\Validation\Validator;
+use Validator;
 use Illuminate\View\View;
 use Exception;
 use Illuminate\Http\Request;
@@ -63,7 +63,7 @@ class BranchController extends Controller
 
         Branch::create($requestData);
 
-        return redirect('branches')->with('flash_message', __('flash_message.Faculty added'));
+        return redirect('branches')->with('flash_message', __('flash_message.added'));
     }
 
     /**
@@ -91,7 +91,7 @@ class BranchController extends Controller
         if (!$branch) {
             return redirect('branches');
         }
-        return view('admin.branch.edit', compact('faculty'));
+        return view('admin.branch.edit', compact('branch'));
     }
 
     /**
@@ -114,7 +114,7 @@ class BranchController extends Controller
 
         $branch->update($requestData);
 
-        return redirect('faculty')->with('flash_message',  __('flash_message.Faculty Updated'));
+        return redirect('branches')->with('flash_message',  __('flash_message.edited'));
     }
 
     /**

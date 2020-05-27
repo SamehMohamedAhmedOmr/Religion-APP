@@ -34,7 +34,25 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('users', 'UserMemberController');
+
+    // Questions
     Route::resource('branches', 'BranchController');
+    Route::get('getBranchAjax', 'BranchController@getFacultyAjax');
+
+    // Questions
+    Route::resource('chapters', 'BranchController');
+    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+
+    // Questions
+    Route::resource('sections', 'BranchController');
+    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+
+    // Questions
+    Route::resource('keywords', 'BranchController');
+    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+
+    // Questions
+    Route::resource('questions', 'BranchController');
     Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
 
 
@@ -74,5 +92,3 @@ Route::get('mdi', function () {
 Route::get('translations', function () {
     return view('vendor.translation-manager.index');
 });
-
-//Route::resource('topics/{index}', 'SubjecttopicController');

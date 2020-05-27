@@ -1,6 +1,6 @@
 $(function () {
     // when docs ready call data table
-    var targetURL = 'getFacultyAjax';
+    var targetURL = 'getBranchAjax';
     var lang = $('#dataTableAjaxScript').data('lang');
     if(lang == 'ar'){
         var arabicLanguage = {
@@ -33,26 +33,18 @@ $(function () {
             url: targetURL,
             type: "GET",
         },
-        columns: [{
-                data: 'logo',
-                orderable: false,
-                render: function (data) {
-                    id = data.split('_');
-                    renderImg = '<img class="faculty_logo" src="storage/faculty_pic/' + id[0] + '/' + data + '" >';
-                    return renderImg;
-                }
-            },
+        columns: [
             {
-                data: 'faculty_name',
-                render: function (faculty_name) {
-                    return faculty_name;
+                data: 'name',
+                render: function (name) {
+                    return name;
                 }
             },
             {
                 data: 'id',
                 orderable: false,
                 render: function (data) {
-                    edit = '<a href="faculty/' + data + '/edit" class="btn btn-sm btn-info text-white ml-2"><i class="fas fa-marker"></i> </a>';
+                    edit = '<a href="branches/' + data + '/edit" class="btn btn-sm btn-info text-white ml-2"><i class="fas fa-marker"></i> </a>';
                     remove = '<a  class="btn btn-sm btn-danger text-white" data-toggle="modal" data-target="#deleteModal" onclick="openModal(' + data + ')" > <i class="far fa-trash-alt"></i> </a>';
                     return edit + '&nbsp;' + remove;
                 }
@@ -78,7 +70,7 @@ function openModal(id) {
 function DeleteItem() {
     var id = $('#RemoveItem').val();
     // ajax delete data to database
-    var targetURL = 'faculty/' + id;
+    var targetURL = 'branches/' + id;
 
     $.ajax({
         headers: {

@@ -7,191 +7,127 @@
 @section('content')
     <!-- partial -->
     <div class="main-panel">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card p-5">
+                <div class="card mt-2 p-3">
+                    <div class="card-body dashboard-tabs p-0">
+                        <ul class="nav nav-tabs px-4 d-flex justify-content-center p-2 box"
+                            style="background-color: #303952;color: #fff !important; border: none;"
+                            role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   style="color: #fff; border-color: #fff; font-size: 20px;"
+                                   id="overview-tab" data-toggle="tab"
+                                   href="#overview" role="tab" aria-controls="overview"
+                                   aria-selected="true">{{__("admin.statistics")}}</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content py-0 px-0 mt-5">
+                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                 aria-labelledby="overview-tab">
 
-        @if (Auth::user()->type==0)
-            <div class="row">
-                <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body dashboard-tabs p-0">
-                            <ul class="nav nav-tabs px-4" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="overview-tab" data-toggle="tab"
-                                       href="#overview" role="tab" aria-controls="overview"
-                                       aria-selected="true">{{__("home.Admin")}}</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content py-0 px-0">
-                                <div class="tab-pane fade show active" id="overview" role="tabpanel"
-                                     aria-labelledby="overview-tab">
-                                    <div class="d-flex flex-wrap justify-content-xl-between">
-                                        <div
-                                            class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small class="mb-1 text-muted">{{ __('admin.Users') }}</small>
-                                                <div class="dropdown">
-                                                    <h5 class="mb-0 d-inline-block">
-                                                        0
-                                                    </h5>
+                                <div class="row mb-4 justify-content-around">
 
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-home-variant mr-3 icon-lg text-danger"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{ __('admin.faculties') }} </small>
-                                                <h5 class="mr-2 mb-0"> 0 </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-format-section mr-3 icon-lg text-success"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{ __('admin.Departments') }}</small>
-                                                <h5 class="mr-2 mb-0">0</h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("Staff.Councildefinitions")}}</small>
-                                                <h5 class="mr-2 mb-0"> 0 </h5>
+                                    <div
+                                        class="col-md-5 col-6 mx-md-2 mx-1 mb-md-0 mb-3
+                                        d-flex box
+                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        style="background-color: #778beb; color: #fff;"
+                                    >
+                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small class="mb-1">
+                                                {{ __('admin.branches') }}
+                                            </small>
+                                            <div class="dropdown">
+                                                <h5 class="mb-0 d-inline-block">
+                                                    0
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div
+                                        class="col-md-5 col-6 mx-md-2 mx-1
+                                        d-flex box
+                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        style="background-color: #cf6a87; color: #fff;"
+                                    >
+                                        <i class="mdi mdi-home-variant mr-3 icon-lg text-danger"></i>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small
+                                                class="mb-1">
+                                                {{ __('admin.chapters') }}
+                                            </small>
+                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                        </div>
+                                    </div>
+
                                 </div>
+
+                                <div class="row justify-content-around mb-4">
+
+                                    <div
+                                        class="col-md-5 col-6 mx-md-2 mx-1 mb-md-0 mb-3
+                                        d-flex box
+                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        style="background-color: #e77f67; color: #fff;"
+                                    >
+                                        <i class="mdi mdi-format-section mr-3 icon-lg text-success"></i>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small
+                                                class="mb-1">
+                                                {{ __('admin.sections') }}
+                                            </small>
+                                            <h5 class="mr-2 mb-0">0</h5>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="col-md-5 col-6 mx-md-2 mx-1
+                                        d-flex box
+                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        style="background-color: #786fa6; color: #fff;"
+                                    >
+                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small
+                                                class="mb-1">
+                                                {{__("admin.keywords")}}
+                                            </small>
+                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row justify-content-around mb-4">
+
+                                    <div
+                                        class="d-flex box
+                                        col-md-5 col-6 mx-md-2 mx-1
+                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        style="background-color: #63cdda; color: #fff;"
+                                    >
+                                        <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
+                                        <div class="d-flex flex-column justify-content-around">
+                                            <small
+                                                class="mb-1">
+                                                {{__("admin.Questions")}}
+                                            </small>
+                                            <h5 class="mr-2 mb-0"> 0 </h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--member view -->
-        @else
-            <div class="row">
-                <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body dashboard-tabs p-0">
-                            <ul class="nav nav-tabs px-4" role="tablist">
-
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="purchases-tab" data-toggle="tab"
-                                       href="#purchases" role="tab" aria-controls="purchases"
-                                       aria-selected="false">{{__("home.Staff")}}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " id="sales-tab" data-toggle="tab" href="#sales"
-                                       role="tab" aria-controls="sales"
-                                       aria-selected="false">{{__("admin.member")}}</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content py-0 px-0">
-
-                                <div class="tab-pane fade show active " id="purchases" role="tabpanel"
-                                     aria-labelledby="purchases-tab">
-                                    <div class="d-flex flex-wrap justify-content-xl-between">
-                                        <div
-                                            class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-2 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small class="mb-1 text-muted">{{__("Staff.Ranks")}}</small>
-                                                <div class="dropdown">
-                                                    <h5 class="mb-0 d-inline-block">{{$rank}}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-2 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small class="mb-1 text-muted">{{__("Staff.Positions")}}</small>
-                                                <h5 class="mr-2 mb-0"> 0 </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-2 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small class="mb-1 text-muted">{{__("home.Subject")}}</small>
-                                                <h5 class="mr-2 mb-0"> 0 </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-2 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("Staff.Councildefinitions")}}</small>
-                                                <h5 class="mr-2 mb-0">
-                                                    0
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="sales" role="tabpanel"
-                                     aria-labelledby="sales-tab">
-                                    <div class="d-flex flex-wrap justify-content-xl-between">
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-2 item">
-                                            <i class="mdi mdi-counter mr-3 icon-lg text-warning"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("admin.Total Meeting Your in")}}</small>
-                                                <h5 class="mr-2 mb-0">
-                                                    0
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-book-open mr-3 icon-lg text-success"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("admin.Opened Meetings")}}</small>
-                                                <h5 class="mr-2 mb-0">
-                                                    0
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-checkbox-blank mr-3 icon-lg text-danger"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("admin.Closed Meetings")}}</small>
-                                                <h5 class="mr-2 mb-0">
-                                                    0
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                            <i class="mdi mdi-calendar-heart icon-lg mr-3 text-primary"></i>
-                                            <div class="d-flex flex-column justify-content-around">
-                                                <small
-                                                    class="mb-1 text-muted">{{__("admin.Nearset Meeting Number/Date")}}</small>
-                                                <h5 class="mr-2 mb-0">
-                                                    0
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        @endif
+        </div>
+        <!--member view -->
 
     </div>
     <!-- content-wrapper ends -->
