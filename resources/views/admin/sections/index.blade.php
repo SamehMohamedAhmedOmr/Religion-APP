@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle')
-    {{ __('admin.branches') }}
+    {{ __('admin.sections') }}
 @endsection
 
 @section('content')
@@ -21,11 +21,11 @@
             <div class="col-md-12 grid-margin">
                 @include('messages')
                 <div class="card">
-                    <div class="card-header top-card">{{ __('admin.branches') }}</div>
+                    <div class="card-header top-card">{{ __('admin.sections') }}</div>
                     <div class="card-body">
                         <div class="p-3 add-new">
-                            <a href="{{ url('branches/create') }}" class="btn btn-success btn-sm" title="{{ __('admin.Add new Branch') }}">
-                                <i class="fa fa-plus" aria-hidden="true"></i> {{ __('admin.Add new Branch') }}
+                            <a href="{{ url('sections/create') }}" class="btn btn-success btn-sm" title="{{ __('admin.Add new Section') }}">
+                                <i class="fa fa-plus" aria-hidden="true"></i> {{ __('admin.Add new Section') }}
                             </a>
                         </div>
 
@@ -72,6 +72,6 @@
 
 @section('scripts')
 
-<script src="{{ URL::asset('js/ajax/getBranch.js') }}" data-lang="{{ App::getLocale() }}" id='dataTableAjaxScript'></script>
+<script src="{{ URL::asset('js/ajax/getSections.js') }}" data-lang="{{ App::getLocale() }}" id='dataTableAjaxScript'></script>
 
 @endsection

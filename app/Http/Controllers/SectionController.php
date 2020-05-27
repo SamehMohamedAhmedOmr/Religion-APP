@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
+use App\Models\Section;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
@@ -23,14 +24,14 @@ class SectionController extends Controller
      */
     public function index(Request $request)
     {
-        return view('admin.branch.index');
+        return view('admin.sections.index');
     }
 
     public function getAjax()
     {
-        $branch= Branch::all();
+        $section= Section::all();
         try {
-            return Datatables::of($branch)->addIndexColumn()->make(true);
+            return Datatables::of($section)->addIndexColumn()->make(true);
         } catch (Exception $e) {
             dd($e);
         }
@@ -43,7 +44,7 @@ class SectionController extends Controller
      */
     public function create()
     {
-        return view('admin.branch.create');
+        return view('admin.sections.create');
     }
 
     /**
@@ -61,9 +62,9 @@ class SectionController extends Controller
 
         $requestData = $request->all();
 
-        Branch::create($requestData);
+        Section::create($requestData);
 
-        return redirect('branches')->with('flash_message', __('flash_message.added'));
+        return redirect('sections')->with('flash_message', __('flash_message.added'));
     }
 
     /**
@@ -75,7 +76,7 @@ class SectionController extends Controller
      */
     public function show($id)
     {
-        return redirect('branches');
+        return redirect('sections');
     }
 
     /**
@@ -87,11 +88,11 @@ class SectionController extends Controller
      */
     public function edit($id)
     {
-        $branch = Branch::find($id);
-        if (!$branch) {
-            return redirect('branches');
+        $section = Branch::find($id);
+        if (!$section) {
+            return redirect('sections');
         }
-        return view('admin.branch.edit', compact('branch'));
+        return view('admin.sections.edit', compact('section'));
     }
 
     /**
@@ -108,13 +109,13 @@ class SectionController extends Controller
             'name' => 'required|string|min:3|max:254',
         ])->validate();
 
-        $branch = Branch::findOrFail($id);
+        $section = Section::findOrFail($id);
 
         $requestData = $request->all();
 
-        $branch->update($requestData);
+        $section->update($requestData);
 
-        return redirect('branches')->with('flash_message',  __('flash_message.edited'));
+        return redirect('sections')->with('flash_message',  __('flash_message.edited'));
     }
 
     /**
@@ -126,9 +127,9 @@ class SectionController extends Controller
      */
     public function destroy($id)
     {
-        $branch = Branch::find($id);
-        if ($branch) {
-            $branch->delete();
+        $section = Section::find($id);
+        if ($section) {
+            $section->delete();
             return 1;
         }
         return 0;

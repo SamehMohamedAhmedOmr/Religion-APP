@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
+use App\Models\Chapter;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
@@ -23,14 +24,14 @@ class ChapterController extends Controller
      */
     public function index(Request $request)
     {
-        return view('admin.branch.index');
+        return view('admin.chapters.index');
     }
 
     public function getAjax()
     {
-        $branch= Branch::all();
+        $chapter = Chapter::all();
         try {
-            return Datatables::of($branch)->addIndexColumn()->make(true);
+            return Datatables::of($chapter)->addIndexColumn()->make(true);
         } catch (Exception $e) {
             dd($e);
         }
@@ -43,7 +44,7 @@ class ChapterController extends Controller
      */
     public function create()
     {
-        return view('admin.branch.create');
+        return view('admin.chapters.create');
     }
 
     /**
@@ -61,9 +62,9 @@ class ChapterController extends Controller
 
         $requestData = $request->all();
 
-        Branch::create($requestData);
+        Chapter::create($requestData);
 
-        return redirect('branches')->with('flash_message', __('flash_message.added'));
+        return redirect('chapters')->with('flash_message', __('flash_message.added'));
     }
 
     /**
@@ -75,7 +76,7 @@ class ChapterController extends Controller
      */
     public function show($id)
     {
-        return redirect('branches');
+        return redirect('chapters');
     }
 
     /**
@@ -87,11 +88,11 @@ class ChapterController extends Controller
      */
     public function edit($id)
     {
-        $branch = Branch::find($id);
-        if (!$branch) {
-            return redirect('branches');
+        $chapter = Branch::find($id);
+        if (!$chapter) {
+            return redirect('chapters');
         }
-        return view('admin.branch.edit', compact('branch'));
+        return view('admin.chapters.edit', compact('chapter'));
     }
 
     /**
@@ -108,13 +109,13 @@ class ChapterController extends Controller
             'name' => 'required|string|min:3|max:254',
         ])->validate();
 
-        $branch = Branch::findOrFail($id);
+        $chapter = Chapter::findOrFail($id);
 
         $requestData = $request->all();
 
-        $branch->update($requestData);
+        $chapter->update($requestData);
 
-        return redirect('branches')->with('flash_message',  __('flash_message.edited'));
+        return redirect('chapters')->with('flash_message',  __('flash_message.edited'));
     }
 
     /**
@@ -126,9 +127,9 @@ class ChapterController extends Controller
      */
     public function destroy($id)
     {
-        $branch = Branch::find($id);
-        if ($branch) {
-            $branch->delete();
+        $chapter = Chapter::find($id);
+        if ($chapter) {
+            $chapter->delete();
             return 1;
         }
         return 0;

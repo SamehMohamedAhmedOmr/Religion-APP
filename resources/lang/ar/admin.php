@@ -21,4 +21,7 @@ return array (
   'add' => 'اضافة',
   'edit' => 'تعديل',
   'Add new Keyword' => 'اضافة كلمة دلالية جديدة',
+  'Add new Chapter' => 'اضافة باب جديد',
+  'Add new Section' => 'اضافة فصل جديد',
+  'Add new Question' => 'اضافة سؤال جديد',
 );

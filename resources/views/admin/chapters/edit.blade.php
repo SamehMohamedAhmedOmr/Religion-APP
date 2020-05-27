@@ -6,7 +6,7 @@
 @endsection
 
 @section('pageTitle')
-    {{ __('admin.branches') }} | {{ __('admin.edit') }}
+    {{ __('admin.chapters') }} | {{ __('admin.edit') }}
 @endsection
 
 @section('content')
@@ -17,11 +17,11 @@
                 <div class="col-md-12 grid-margin">
                     <div class="card">
                         <div class="card-header top-card">{{ __('admin.edit') }}
-                            <span class="name">{{ $branch->name }}</span>
+                            <span class="name">{{ $chapter->name }}</span>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <a class='back-button' href="{{ url('branches') }}" title="Back">
+                                <a class='back-button' href="{{ url('chapters') }}" title="Back">
                                     <button class="btn btn-warning btn-sm">
                                         <i class="fa fa-arrow-left" aria-hidden="true"></i> {{ __('home.Back') }}
                                     </button>
@@ -36,7 +36,7 @@
                                 </ul>
                             @endif
 
-                            <form method="POST" action="{{ url('branches/' . $branch->id) }}" accept-charset="UTF-8"
+                            <form method="POST" action="{{ url('chapters/' . $chapter->id) }}" accept-charset="UTF-8"
                                   class="form-horizontal custom-form" enctype="multipart/form-data">
                                 {{ method_field('PATCH') }}
                                 {{ csrf_field() }}

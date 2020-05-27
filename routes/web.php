@@ -33,40 +33,37 @@ Route::middleware('auth')->group(function () {
     Route::get('/', 'DashboardController@welcome');
 
 
-    Route::resource('users', 'UserMemberController');
-
     // Questions
     Route::resource('branches', 'BranchController');
     Route::get('getBranchesAjax', 'BranchController@getAjax');
 
     // Questions
-    Route::resource('chapters', 'BranchController');
-    Route::get('getChaptersAjax', 'BranchController@getAjax');
+    Route::resource('chapters', 'ChapterController');
+    Route::get('getChaptersAjax', 'ChapterController@getAjax');
 
     // Questions
-    Route::resource('sections', 'BranchController');
-    Route::get('getSectionsAjax', 'BranchController@getAjax');
+    Route::resource('sections', 'SectionController');
+    Route::get('getSectionsAjax', 'SectionController@getAjax');
 
     // Questions
     Route::resource('keywords', 'KeywordController');
     Route::get('getKeywordsAjax', 'KeywordController@getAjax');
 
     // Questions
-    Route::resource('questions', 'BranchController');
-    Route::get('getQuestionsAjax', 'BranchController@getAjax');
-
-
+    Route::resource('questions', 'QuestionController');
+    Route::get('getQuestionsAjax', 'QuestionController@getAjax');
 
 });
 
+
+
 Auth::routes();
+
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 /** **/
-
 
 // Route::get('chartjs', function () {
 //     return view('Pages.charts.chartjs');
@@ -84,9 +81,9 @@ Auth::routes();
 //     return view('Pages.forms.basic_elements');
 // });
 
-Route::get('mdi', function () {
-    return view('Pages.icons.mdi');
-});
+//Route::get('mdi', function () {
+//    return view('Pages.icons.mdi');
+//});
 
 
 Route::get('translations', function () {
