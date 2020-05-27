@@ -6,7 +6,7 @@
 @endsection
 
 @section('pageTitle')
-{{ __('admin.branches') }} | {{ __('admin.add') }}
+{{ __('admin.keywords') }} | {{ __('admin.add') }}
 @endsection
 
 @section('content')
@@ -16,10 +16,10 @@
         <div class="row">
             <div class="col-md-12 grid-margin">
                 <div class="card">
-                    <div class="card-header top-card">{{ __('admin.Add new Branch') }}</div>
+                    <div class="card-header top-card">{{ __('admin.Add new Keyword') }}</div>
                     <div class="card-body">
                         <div class="p-3">
-                            <a class='back-button' href="{{ url('branches') }}" title="Back">
+                            <a class='back-button' href="{{ url('keywords') }}" title="Back">
                                 <button class="btn btn-warning btn-sm">
                                     <i class="fa fa-arrow-left" aria-hidden="true"></i> {{ __('home.Back') }}
                                 </button>
@@ -34,11 +34,11 @@
                         </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('branches') }}" accept-charset="UTF-8" class="form-horizontal custom-form"
+                        <form method="POST" action="{{ url('keywords') }}" accept-charset="UTF-8" class="form-horizontal custom-form"
                             enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.branch.form', ['formMode' => 'create'])
+                            @include ('admin.keywords.form', ['formMode' => 'create'])
 
                         </form>
 

@@ -20,4 +20,5 @@ return array (
   'Add new Branch' => 'اضافة فرع جديد',
   'add' => 'اضافة',
   'edit' => 'تعديل',
+  'Add new Keyword' => 'اضافة كلمة دلالية جديدة',
 );

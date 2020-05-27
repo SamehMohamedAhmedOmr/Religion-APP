@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
+use App\Models\Keyword;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
@@ -23,14 +24,14 @@ class KeywordController extends Controller
      */
     public function index(Request $request)
     {
-        return view('admin.branch.index');
+        return view('admin.keywords.index');
     }
 
     public function getAjax()
     {
-        $branch= Branch::all();
+        $keywords = Keyword::all();
         try {
-            return Datatables::of($branch)->addIndexColumn()->make(true);
+            return Datatables::of($keywords)->addIndexColumn()->make(true);
         } catch (Exception $e) {
             dd($e);
         }
@@ -43,7 +44,7 @@ class KeywordController extends Controller
      */
     public function create()
     {
-        return view('admin.branch.create');
+        return view('admin.keywords.create');
     }
 
     /**
@@ -61,9 +62,9 @@ class KeywordController extends Controller
 
         $requestData = $request->all();
 
-        Branch::create($requestData);
+        Keyword::create($requestData);
 
-        return redirect('branches')->with('flash_message', __('flash_message.added'));
+        return redirect('keywords')->with('flash_message', __('flash_message.added'));
     }
 
     /**
@@ -75,7 +76,7 @@ class KeywordController extends Controller
      */
     public function show($id)
     {
-        return redirect('branches');
+        return redirect('keywords');
     }
 
     /**
@@ -87,11 +88,11 @@ class KeywordController extends Controller
      */
     public function edit($id)
     {
-        $branch = Branch::find($id);
-        if (!$branch) {
-            return redirect('branches');
+        $keyword = Keyword::find($id);
+        if (!$keyword) {
+            return redirect('keywords');
         }
-        return view('admin.branch.edit', compact('branch'));
+        return view('admin.keywords.edit', compact('keyword'));
     }
 
     /**
@@ -108,13 +109,13 @@ class KeywordController extends Controller
             'name' => 'required|string|min:3|max:254',
         ])->validate();
 
-        $branch = Branch::findOrFail($id);
+        $keyword = Keyword::findOrFail($id);
 
         $requestData = $request->all();
 
-        $branch->update($requestData);
+        $keyword->update($requestData);
 
-        return redirect('branches')->with('flash_message',  __('flash_message.edited'));
+        return redirect('keywords')->with('flash_message',  __('flash_message.edited'));
     }
 
     /**
@@ -126,9 +127,9 @@ class KeywordController extends Controller
      */
     public function destroy($id)
     {
-        $branch = Branch::find($id);
-        if ($branch) {
-            $branch->delete();
+        $keyword = Keyword::find($id);
+        if ($keyword) {
+            $keyword->delete();
             return 1;
         }
         return 0;

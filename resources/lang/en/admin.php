@@ -9,4 +9,5 @@ return array (
   'Questions' => 'Questions',
   'statistics' => 'Statistics',
   'Add new Branch' => 'Add new Branch',
+  'Add new Keyword' => 'Add new Keyword',
 );

@@ -46,7 +46,7 @@ $(function () {
                 data: 'id',
                 orderable: false,
                 render: function (data) {
-                    edit = '<a href="branches/' + data + '/edit" class="btn btn-sm btn-info text-white ml-2"><i class="fas fa-marker"></i> </a>';
+                    edit = '<a href="keywords/' + data + '/edit" class="btn btn-sm btn-info text-white ml-2"><i class="fas fa-marker"></i> </a>';
                     remove = '<a  class="btn btn-sm btn-danger text-white" data-toggle="modal" data-target="#deleteModal" onclick="openModal(' + data + ')" > <i class="far fa-trash-alt"></i> </a>';
                     return edit + '&nbsp;' + remove;
                 }
@@ -70,9 +70,9 @@ function openModal(id) {
 }
 //  delete Gas Station
 function DeleteItem() {
-    var id = $('#RemoveItem').val();
+    let id = $('#RemoveItem').val();
     // ajax delete data to database
-    var targetURL = 'branches/' + id;
+    let targetURL = 'keywords/' + id;
 
     $.ajax({
         headers: {
