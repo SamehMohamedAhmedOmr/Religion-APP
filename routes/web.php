@@ -70,9 +70,6 @@ Route::get('mdi', function () {
     return view('Pages.icons.mdi');
 });
 
-// Route::get('basic-table', function () {
-//     return view('Pages.tables.basic-table');
-// });
 
 Route::get('translations', function () {
     return view('vendor.translation-manager.index');
