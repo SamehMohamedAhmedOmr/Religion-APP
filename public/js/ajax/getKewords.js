@@ -1,8 +1,9 @@
 $(function () {
     // when docs ready call data table
-    let targetURL = 'getBranchesAjax';
-    let lang = $('#dataTableAjaxScript').data('lang');
+    let targetURL = 'getKeywordsAjax';
     let arabicLanguage = {};
+
+    let lang = $('#dataTableAjaxScript').data('lang');
     if(lang === 'ar'){
          arabicLanguage = {
             "sProcessing": "جارٍ التحميل...",

@@ -37,23 +37,23 @@ Route::middleware('auth')->group(function () {
 
     // Questions
     Route::resource('branches', 'BranchController');
-    Route::get('getBranchAjax', 'BranchController@getFacultyAjax');
+    Route::get('getBranchesAjax', 'BranchController@getAjax');
 
     // Questions
     Route::resource('chapters', 'BranchController');
-    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+    Route::get('getChaptersAjax', 'BranchController@getAjax');
 
     // Questions
     Route::resource('sections', 'BranchController');
-    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+    Route::get('getSectionsAjax', 'BranchController@getAjax');
 
     // Questions
-    Route::resource('keywords', 'BranchController');
-    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+    Route::resource('keywords', 'KeywordController');
+    Route::get('getKeywordsAjax', 'KeywordController@getAjax');
 
     // Questions
     Route::resource('questions', 'BranchController');
-    Route::get('getFacultyAjax', 'BranchController@getFacultyAjax');
+    Route::get('getQuestionsAjax', 'BranchController@getAjax');
 
 
 

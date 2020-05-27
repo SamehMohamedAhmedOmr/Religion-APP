@@ -26,7 +26,7 @@ class KeywordController extends Controller
         return view('admin.branch.index');
     }
 
-    public function getFacultyAjax()
+    public function getAjax()
     {
         $branch= Branch::all();
         try {
