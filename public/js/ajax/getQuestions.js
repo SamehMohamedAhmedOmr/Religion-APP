@@ -46,6 +46,7 @@ $(function () {
             {
                 data: 'question',
                 render: function (question) {
+                    question = parseMe(question);
                     question = (question.length > 100) ? question.substring(0, 100) + ' .....' : question;
                     return question;
                 }
@@ -79,6 +80,12 @@ $(function () {
     });
 });
 
+
+function parseMe(value) {
+    let semiRichText = value.replace(/<br(\/)?>/ig, '\r\n');
+    let plainTextVersion = $("<div></div>").html(semiRichText).text();
+    return  plainTextVersion.replace(/^(\r\n|\n)*|(\r\n|\n)*$/ig, "").replace(/\r\n|\n/ig, "<br/>");
+}
 
 // open modal to delete item
 function openModal(id) {

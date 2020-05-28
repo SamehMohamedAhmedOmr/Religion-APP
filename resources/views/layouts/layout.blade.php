@@ -85,11 +85,10 @@
 
     <script id='input-errors' data-errorMSG="{{ __('placeholder.Please Fill out This Field') }}">
         $(function(){
-            $( window ).on("load",function(){
-                setTimeout(function(){
-                    $('.whole-page-overlay').slideUp();
-                }, 500);
-            });
+
+            setTimeout(function(){
+                $('.whole-page-overlay').slideUp();
+            }, 500);
 
             $(document).click(function(){
                 $('.search-area').removeClass('d-block').addClass('d-none');
