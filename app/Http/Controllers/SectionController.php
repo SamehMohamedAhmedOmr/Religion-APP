@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
+use App\Models\Chapter;
 use App\Models\Section;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -29,12 +30,18 @@ class SectionController extends Controller
 
     public function getAjax()
     {
-        $section= Section::all();
+        $section= Section::with('chapter.branch')->get();
         try {
             return Datatables::of($section)->addIndexColumn()->make(true);
         } catch (Exception $e) {
             dd($e);
         }
+    }
+
+    public function getSections($chapter_id){
+        $sections = Section::where('chapter_id',$chapter_id)->get();
+        return response()->json($sections);
+
     }
 
     /**
@@ -44,7 +51,9 @@ class SectionController extends Controller
      */
     public function create()
     {
-        return view('admin.sections.create');
+        $branches = Branch::all();
+
+        return view('admin.sections.create',compact('branches'));
     }
 
     /**
@@ -90,11 +99,19 @@ class SectionController extends Controller
      */
     public function edit($id)
     {
-        $section = Branch::find($id);
+        $section = Section::find($id);
+
         if (!$section) {
             return redirect('sections');
         }
-        return view('admin.sections.edit', compact('section'));
+
+        $branch_id = ($section->chapter) ? $section->chapter->branch_id : '';
+
+        $branches = Branch::all();
+
+        $chapters = Chapter::where('branch_id',$branch_id)->get();
+
+        return view('admin.sections.edit', compact('section','branches','branch_id','chapters'));
     }
 
     /**

@@ -43,6 +43,18 @@ $(function () {
                 }
             },
             {
+                data: 'chapter',
+                render: function (chapter) {
+                    return (chapter) ? chapter.name : '';
+                }
+            },
+            {
+                data: 'chapter',
+                render: function (chapter) {
+                    return (chapter) ? (chapter.branch) ? chapter.branch.name : '' : '';
+                }
+            },
+            {
                 data: 'id',
                 orderable: false,
                 render: function (data) {

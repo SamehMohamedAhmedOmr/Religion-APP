@@ -9,7 +9,7 @@
 <div class="row custom-form-group">
     <div class="col-12 p-0">
         <div class="form-group {{ $errors->has('branch_id') ? 'has-error' : ''}}">
-            <label for="faculty_id" class="control-label">{{ __('admin.branches') }} <span style="color:red !important;">*</span></label>
+            <label for="branch_id" class="control-label">{{ __('admin.branch') }} <span style="color:red !important;">*</span></label>
             <label class="d-block w-100">
                 <select class="form-control specialSelect" name="branch_id" required>
                     <option selected hidden value="">{{ __('placeholder.Select Branch') }}</option>
@@ -37,8 +37,6 @@
         </div>
     </div>
 </div>
-
-
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? __('home.update') : __('home.Save') }}">

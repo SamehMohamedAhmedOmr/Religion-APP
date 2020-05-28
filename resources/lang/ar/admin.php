@@ -27,4 +27,5 @@ return array (
   'branch' => 'الفرع',
   'chapter' => 'الباب',
   'section' => 'الفصل',
+  'Email' => 'البريد الاكتروني',
 );

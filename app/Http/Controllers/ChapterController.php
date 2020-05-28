@@ -37,6 +37,11 @@ class ChapterController extends Controller
         }
     }
 
+    public function getChapters($branch_id){
+        $chapters = Chapter::where('branch_id',$branch_id)->get();
+        return response()->json($chapters);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

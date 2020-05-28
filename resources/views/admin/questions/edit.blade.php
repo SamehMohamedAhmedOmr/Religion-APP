@@ -2,6 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/tables.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/selectize.bootstrap3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/specialFileInput.css') }}"/>
 @endsection
 
@@ -17,7 +18,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="card">
                         <div class="card-header top-card">{{ __('admin.edit') }}
-                            <span class="name">{{ $branch->name }}</span>
+                            <span class="name">{{ $question->name }}</span>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
@@ -36,7 +37,7 @@
                                 </ul>
                             @endif
 
-                            <form method="POST" action="{{ url('questions/' . $branch->id) }}" accept-charset="UTF-8"
+                            <form method="POST" action="{{ url('questions/' . $question->id) }}" accept-charset="UTF-8"
                                   class="form-horizontal custom-form" enctype="multipart/form-data">
                                 {{ method_field('PATCH') }}
                                 {{ csrf_field() }}
@@ -53,6 +54,10 @@
         @endsection
 
 @section('scripts')
-
+            <script type="text/javascript" src="{{ URL::asset('js/selectize.min.js') }}"></script>
+            <script type="text/javascript">
+                $('.specialSelect').selectize();
+            </script>
+            <script src="{{ URL::asset('js/ajax/getLists.js') }}"></script>
     </div>
 @endsection

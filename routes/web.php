@@ -40,10 +40,12 @@ Route::middleware('auth')->group(function () {
     // Questions
     Route::resource('chapters', 'ChapterController');
     Route::get('getChaptersAjax', 'ChapterController@getAjax');
+    Route::get('getChapters/{branch_id}', 'ChapterController@getChapters');
 
     // Questions
     Route::resource('sections', 'SectionController');
     Route::get('getSectionsAjax', 'SectionController@getAjax');
+    Route::get('getSections/{chapter_id}', 'ChapterController@getSections');
 
     // Questions
     Route::resource('keywords', 'KeywordController');

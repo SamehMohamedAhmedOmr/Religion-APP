@@ -35,6 +35,8 @@
                                 <thead>
                                     <tr>
                                         <th>{{ __('admin.Name') }}</th>
+                                        <th>{{ __('admin.chapter') }}</th>
+                                        <th>{{ __('admin.branch') }}</th>
                                         <th class="no-sort">{{ __('admin.options') }}</th>
                                     </tr>
                                 </thead>
