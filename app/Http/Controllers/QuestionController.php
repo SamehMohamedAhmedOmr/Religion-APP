@@ -56,8 +56,14 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+
+            'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
+            'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
+            'section_id' => 'required|integer|exists:sections,id'.$delete_check,
+
         ])->validate();
 
         $requestData = $request->all();
@@ -105,8 +111,14 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+
+            'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
+            'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
+            'section_id' => 'required|integer|exists:sections,id'.$delete_check,
+
         ])->validate();
 
         $question = Question::findOrFail($id);

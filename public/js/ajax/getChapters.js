@@ -43,6 +43,12 @@ $(function () {
                 }
             },
             {
+                data: 'branch',
+                render: function (branch) {
+                    return (branch) ? branch.name : '';
+                }
+            },
+            {
                 data: 'id',
                 orderable: false,
                 render: function (data) {

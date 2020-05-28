@@ -56,8 +56,10 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
+        $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+            'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
         ])->validate();
 
         $requestData = $request->all();
@@ -105,8 +107,11 @@ class SectionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $delete_check = ',deleted_at,NULL';
+
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+            'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
         ])->validate();
 
         $section = Section::findOrFail($id);

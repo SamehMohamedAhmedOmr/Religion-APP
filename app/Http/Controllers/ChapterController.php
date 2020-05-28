@@ -29,7 +29,7 @@ class ChapterController extends Controller
 
     public function getAjax()
     {
-        $chapter = Chapter::all();
+        $chapter = Chapter::with('branch')->get();
         try {
             return Datatables::of($chapter)->addIndexColumn()->make(true);
         } catch (Exception $e) {
@@ -44,7 +44,9 @@ class ChapterController extends Controller
      */
     public function create()
     {
-        return view('admin.chapters.create');
+        $branches = Branch::all();
+
+        return view('admin.chapters.create', compact('branches'));
     }
 
     /**
@@ -56,8 +58,10 @@ class ChapterController extends Controller
      */
     public function store(Request $request)
     {
+        $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+            'branch_id' => 'required|integer|exists:branches,id'.$delete_check
         ])->validate();
 
         $requestData = $request->all();
@@ -88,11 +92,13 @@ class ChapterController extends Controller
      */
     public function edit($id)
     {
-        $chapter = Branch::find($id);
+        $chapter = Chapter::find($id);
+        $branches = Branch::all();
+
         if (!$chapter) {
             return redirect('chapters');
         }
-        return view('admin.chapters.edit', compact('chapter'));
+        return view('admin.chapters.edit', compact('chapter','branches'));
     }
 
     /**
@@ -105,8 +111,10 @@ class ChapterController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|min:3|max:254',
+            'branch_id' => 'required|integer|exists:branches,id'.$delete_check
         ])->validate();
 
         $chapter = Chapter::findOrFail($id);

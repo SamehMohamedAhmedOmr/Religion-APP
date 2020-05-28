@@ -2,6 +2,7 @@
 
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/tables.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/selectize.bootstrap3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/specialFileInput.css') }}"/>
 @endsection
 
@@ -41,7 +42,7 @@
                                 {{ method_field('PATCH') }}
                                 {{ csrf_field() }}
 
-                                @include ('admin.branch.form', ['formMode' => 'edit'])
+                                @include ('admin.chapters.form', ['formMode' => 'edit'])
 
                             </form>
 
@@ -53,6 +54,9 @@
         @endsection
 
 @section('scripts')
-
+            <script type="text/javascript" src="{{ URL::asset('js/selectize.min.js') }}"></script>
+            <script type="text/javascript">
+                $('.specialSelect').selectize();
+            </script>
     </div>
 @endsection

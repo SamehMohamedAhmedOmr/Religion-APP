@@ -24,4 +24,7 @@ return array (
   'Add new Chapter' => 'اضافة باب جديد',
   'Add new Section' => 'اضافة فصل جديد',
   'Add new Question' => 'اضافة سؤال جديد',
+  'branch' => 'الفرع',
+  'chapter' => 'الباب',
+  'section' => 'الفصل',
 );
