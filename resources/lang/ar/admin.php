@@ -28,4 +28,7 @@ return array (
   'chapter' => 'الباب',
   'section' => 'الفصل',
   'Email' => 'البريد الاكتروني',
+  'question' => 'السؤال',
+  'question_number' => 'رقم السؤال',
+  'answer' => 'الاجابة',
 );

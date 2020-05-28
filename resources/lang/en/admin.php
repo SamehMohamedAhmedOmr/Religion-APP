@@ -13,4 +13,7 @@ return array (
   'Add new Chapter' => 'Add new Chapter',
   'Add new Question' => 'Add new Question',
   'Add new Section' => 'Add new Section',
+  'question' => 'Question',
+  'question_number' => 'Question Number',
+  'answer' => 'Answer',
 );

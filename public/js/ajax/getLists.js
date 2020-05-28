@@ -1,23 +1,30 @@
-function getChapters() {
+function getChapters(key = 0) {
     let id = $('#branch_id').val();
 
-    let chapters =  prepareSelection('#chapter_id');
+    if (id){
+        let chapters =  prepareSelection('#chapter_id');
 
-    let options = chapters[0].selectize;
-    // ajax delete data to database
-    let targetURL = '/getChapters/' + id;
-
-    $.get({
-        url: targetURL,
-        success: function (response) {
-            response.forEach(element => {
-                addOption(options, element)
-            });
-        },
-        error: function (err) {
-            console.log(err);
+        if (key){
+            let sections =  prepareSelection('#section_id');
         }
-    });
+
+        let options = chapters[0].selectize;
+        // ajax delete data to database
+        let targetURL = '/getChapters/' + id;
+
+        $.get({
+            url: targetURL,
+            success: function (response) {
+                console.log(response);
+                response.forEach(element => {
+                    addOption(options, element)
+                });
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
 }
 
 function prepareSelection(selection) {
@@ -41,23 +48,26 @@ function addOption(options, element) {
 
 
 function getSections() {
-    let id = $('#section_id').val();
+    let id = $('#chapter_id').val();
 
-    let sections =  prepareSelection('#chapter_id');
+    if (id){
+        let sections =  prepareSelection('#section_id');
 
-    let options = sections[0].selectize;
-    // ajax delete data to database
-    let targetURL = '/getSections/' + id;
+        let options = sections[0].selectize;
+        // ajax delete data to database
+        let targetURL = '/getSections/' + id;
 
-    $.get({
-        url: targetURL,
-        success: function (response) {
-            response.forEach(element => {
-                addOption(options, element)
-            });
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
+        $.get({
+            url: targetURL,
+            success: function (response) {
+                console.log(response);
+                response.forEach(element => {
+                    addOption(options, element)
+                });
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
 }

@@ -37,11 +37,27 @@ $(function () {
         },
         columns: [
             {
-                data: 'name',
-                render: function (name) {
-                    return name;
+                data: 'id',
+                render: function (id) {
+                    return id;
                 }
             },
+
+            {
+                data: 'question',
+                render: function (question) {
+                    question = (question.length > 100) ? question.substring(0, 100) + ' .....' : question;
+                    return question;
+                }
+            },
+
+            {
+                data: 'branch',
+                render: function (branch) {
+                    return (branch) ? branch.name : '';
+                }
+            },
+
             {
                 data: 'id',
                 orderable: false,

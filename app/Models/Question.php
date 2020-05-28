@@ -10,11 +10,19 @@ class Question extends Model
     use SoftDeletes;
     protected $table = 'questions';
     protected $fillable = [
-        'question', 'answer' , 'section_id'
+        'question', 'answer' , 'section_id', 'branch_id' , 'chapter_id'
     ];
 
     public function section(){
         return $this->belongsTo(Section::class,'section_id','id');
+    }
+
+    public function chapter(){
+        return $this->belongsTo(Chapter::class,'chapter_id','id');
+    }
+
+    public function branch(){
+        return $this->belongsTo(Branch::class,'branch_id','id');
     }
 
     public function keywords(){

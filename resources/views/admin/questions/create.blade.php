@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/tables.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/selectize.bootstrap3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/specialFileInput.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/richtext.min.css') }}">
+
 @endsection
 
 @section('pageTitle')
@@ -55,7 +57,17 @@
     <script type="text/javascript" src="{{ URL::asset('js/selectize.min.js') }}"></script>
     <script type="text/javascript">
         $('.specialSelect').selectize();
+
+        $('.keywords').selectize({
+            maxItems: null
+        });
+
     </script>
+
     <script src="{{ URL::asset('js/ajax/getLists.js') }}"></script>
+
+    <script src="{{ URL::asset('js/jquery.richtext.min.js') }}"></script>
+
+    <script src="{{ URL::asset('js/prepareRichText.js') }}"></script>
 
 @endsection

@@ -41,7 +41,6 @@ class SectionController extends Controller
     public function getSections($chapter_id){
         $sections = Section::where('chapter_id',$chapter_id)->get();
         return response()->json($sections);
-
     }
 
     /**

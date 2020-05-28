@@ -2,6 +2,7 @@
 
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/tables.css') }}" />
+
 @endsection
 
 @section('pageTitle')
@@ -34,7 +35,9 @@
                             <table class="table col-11 m-auto p-0 table-hover" id="get-data">
                                 <thead>
                                     <tr>
-                                        <th>{{ __('admin.Name') }}</th>
+                                        <th>{{ __('admin.question_number') }}</th>
+                                        <th>{{ __('admin.question') }}</th>
+                                        <th>{{ __('admin.branch') }}</th>
                                         <th class="no-sort">{{ __('admin.options') }}</th>
                                     </tr>
                                 </thead>

@@ -219,3 +219,12 @@ div.add-new a i{
     position: relative;
     top: 2px;
 }
+td{
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.richText .richText-toolbar:last-child{
+    display: none !important;
+}
+
