@@ -21,10 +21,31 @@ body{
     color: #002d6a !important;
 }
 
+.question-link{
+    text-decoration: none;
+    color: #fff !important;
+}
+
+
+.question-link:hover{
+    text-decoration: none;
+    color: #fff !important;
+}
 .question-related-title{
     color: #ab1e56;;
 }
 
 .question-related-data{
     color: #002d6a !important;
+}
+
+.btn-light-blue {
+    background-color: #2290ba;
+    border-color: #2290ba;
+    transition: all 1s ease-out;
+}
+
+.btn-light-blue:hover {
+    background-color: #55bce3;
+    border-color: #55bce3;
 }

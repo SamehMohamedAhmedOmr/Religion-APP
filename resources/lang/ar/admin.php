@@ -34,4 +34,5 @@ return array (
   'fatwa_summary' => 'ملخص الفتوى',
   'publish_date' => 'تاريخ النشر',
   'fatwa_number' => 'رقم الفتوى',
+  'more' => 'المزيد',
 );

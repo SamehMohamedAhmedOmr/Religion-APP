@@ -19,4 +19,5 @@ return array (
   'fatwa_summary' => 'Fatwa Summary',
   'publish_date' => 'Publish date',
   'fatwa_number' => 'Fatwa Number',
+  'more' => 'More',
 );

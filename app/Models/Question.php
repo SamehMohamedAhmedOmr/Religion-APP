@@ -6,6 +6,9 @@ use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property mixed question
+ */
 class Question extends Model
 {
     use SoftDeletes;
@@ -39,4 +42,17 @@ class Question extends Model
     public function updatedBy(){
         return $this->belongsTo(User::class,'updated_by','id');
     }
+
+    public function questionAbbreviation(){
+
+        $question = strip_tags($this->question);
+        $question = trim($question);
+        $question = html_entity_decode($question);
+        if (strlen($question) > 300){
+            $question = mb_substr($question, 0, 300, 'utf-8').' ...';
+        }
+
+        return $question;
+    }
+
 }
