@@ -7,6 +7,7 @@ use App\Models\Branch;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Auth;
 use Validator;
 use Illuminate\View\View;
 use Exception;
@@ -61,6 +62,8 @@ class BranchController extends Controller
 
         $requestData = $request->all();
 
+        $requestData['created_by'] = Auth::id();
+
         Branch::create($requestData);
 
         return redirect('branches')->with('flash_message', __('flash_message.added'));
@@ -111,6 +114,8 @@ class BranchController extends Controller
         $branch = Branch::findOrFail($id);
 
         $requestData = $request->all();
+
+        $requestData['updated_by'] = Auth::id();
 
         $branch->update($requestData);
 

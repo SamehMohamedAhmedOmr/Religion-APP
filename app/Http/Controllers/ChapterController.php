@@ -8,6 +8,7 @@ use App\Models\Chapter;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Auth;
 use Validator;
 use Illuminate\View\View;
 use Exception;
@@ -71,6 +72,8 @@ class ChapterController extends Controller
 
         $requestData = $request->all();
 
+        $requestData['created_by'] = Auth::id();
+
         Chapter::create($requestData);
 
         return redirect('chapters')->with('flash_message', __('flash_message.added'));
@@ -125,6 +128,8 @@ class ChapterController extends Controller
         $chapter = Chapter::findOrFail($id);
 
         $requestData = $request->all();
+
+        $requestData['updated_by'] = Auth::id();
 
         $chapter->update($requestData);
 

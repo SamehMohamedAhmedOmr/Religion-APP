@@ -9,6 +9,7 @@ use App\Models\Section;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Auth;
 use Validator;
 use Illuminate\View\View;
 use Exception;
@@ -72,6 +73,8 @@ class SectionController extends Controller
 
         $requestData = $request->all();
 
+        $requestData['created_by'] = Auth::id();
+
         Section::create($requestData);
 
         return redirect('sections')->with('flash_message', __('flash_message.added'));
@@ -133,6 +136,8 @@ class SectionController extends Controller
         $section = Section::findOrFail($id);
 
         $requestData = $request->all();
+
+        $requestData['updated_by'] = Auth::id();
 
         $section->update($requestData);
 

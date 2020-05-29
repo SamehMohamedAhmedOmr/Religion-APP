@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -11,6 +12,7 @@ class Question extends Model
     protected $table = 'questions';
     protected $fillable = [
         'title', 'question', 'answer' , 'section_id', 'branch_id' , 'chapter_id'
+        , 'created_by' , 'updated_by'
     ];
 
     public function section(){
@@ -28,5 +30,13 @@ class Question extends Model
     public function keywords(){
         return $this->belongsToMany(Keyword::class,'questions_keywords','question_id','keyword_id')
             ->using(QuestionKeyword::class);
+    }
+
+    public function createdBy(){
+        return $this->belongsTo(User::class,'created_by','id');
+    }
+
+    public function updatedBy(){
+        return $this->belongsTo(User::class,'updated_by','id');
     }
 }

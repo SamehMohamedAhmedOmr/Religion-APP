@@ -8,6 +8,7 @@ use App\Models\Keyword;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Auth;
 use Validator;
 use Illuminate\View\View;
 use Exception;
@@ -62,6 +63,8 @@ class KeywordController extends Controller
 
         $requestData = $request->all();
 
+        $requestData['created_by'] = Auth::id();
+
         Keyword::create($requestData);
 
         return redirect('keywords')->with('flash_message', __('flash_message.added'));
@@ -112,6 +115,8 @@ class KeywordController extends Controller
         $keyword = Keyword::findOrFail($id);
 
         $requestData = $request->all();
+
+        $requestData['updated_by'] = Auth::id();
 
         $keyword->update($requestData);
 

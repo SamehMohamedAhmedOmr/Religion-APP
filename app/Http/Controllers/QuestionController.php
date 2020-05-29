@@ -11,6 +11,7 @@ use App\Models\Section;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Auth;
 use Validator;
 use Illuminate\View\View;
 use Exception;
@@ -80,6 +81,8 @@ class QuestionController extends Controller
         ])->validate();
 
         $requestData = $request->all();
+
+        $requestData['created_by'] = Auth::id();
 
         $question = Question::create($requestData);
 
@@ -155,6 +158,8 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
 
         $requestData = $request->all();
+
+        $requestData['updated_by'] = Auth::id();
 
         $question->update($requestData);
 
