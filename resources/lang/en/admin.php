@@ -17,4 +17,6 @@ return array (
   'question_number' => 'Question Number',
   'answer' => 'Answer',
   'fatwa_summary' => 'Fatwa Summary',
+  'publish_date' => 'Publish date',
+  'fatwa_number' => 'Fatwa Number',
 );

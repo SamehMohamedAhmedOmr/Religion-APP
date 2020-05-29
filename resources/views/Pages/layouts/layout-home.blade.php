@@ -53,16 +53,21 @@
             color: white;
             margin: 20px;
         }
+
+        @media (min-width: 1300px){
+            .container {
+                max-width: 1300px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <div class="container-scroller">
-        @include('layouts.navbar')
+        @include('Pages.layouts.navbar-home')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-
-            @include('layouts.side-menu')
 
             {{--start content--}}
             @yield('content')
@@ -103,46 +108,6 @@
                 }
             });
 
-            $('#searchy').on('keyup', function(){
-                $value = $(this).val();
-                $('.search-area').removeClass('d-none').addClass('d-block');
-                var ul = $('.search-area ul');
-
-                if($value != "" | $value != " "){
-                    $.ajax({
-                    type : 'get',
-                    url : '/search',
-                    data:{'text':$value},
-                    success: function(data){
-                        ul.empty();
-
-                        if(data == 0){
-                            var li = document.createElement('li');
-                            var des = document.createElement('p');
-                            des.innerHTML='{{ __("home.No subject") }}';
-                            li.append(des);
-                            ul.append(li);
-                        }
-                        else{
-                            data.forEach(element => {
-                                var li = document.createElement('li');
-                                var a = document.createElement('a');
-                                var des = document.createElement('p');
-                                var h6 = document.createElement('h6');
-                                h6.textContent = element.council_definition.council_name;
-                                a.append(h6);
-
-                                des.innerHTML=element.subject_description;
-                                a.setAttribute('href',element.url);
-                                a.append(des);
-                                li.append(a);
-                                ul.append(li);
-                            });
-                        }
-                    }
-                });
-                }
-            });
         });
 
         var errorMsg = document.getElementById('input-errors').getAttribute("data-errorMSG");

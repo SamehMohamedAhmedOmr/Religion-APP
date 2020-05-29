@@ -37,7 +37,7 @@
                                     <tr>
                                         <th>{{ __('admin.question_number') }}</th>
                                         <th>{{ __('admin.fatwa_summary') }}</th>
-                                        <th>{{ __('admin.branch') }}</th>
+                                        <th class="no-sort">{{ __('admin.branch') }}</th>
                                         <th class="no-sort">{{ __('admin.options') }}</th>
                                     </tr>
                                 </thead>

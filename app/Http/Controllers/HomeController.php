@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd('here');
-        return view('home');
+        $questions = Question::orderBy('created_at','desc')->take(10)->get();
+
+        return view('Pages.search.index',compact('questions'));
     }
 }

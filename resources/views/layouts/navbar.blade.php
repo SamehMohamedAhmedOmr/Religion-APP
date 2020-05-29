@@ -76,7 +76,7 @@
             <li class="nav-item nav-search d-block w-100 position-relative app-title" id="sea">
                 <a href="{{ url('dashboard') }}">
                     <img src="{{ URL::asset('images/fatwa_logo.webp') }}"
-                         height="30px;" alt="logo"/>
+                         height="50px;" alt="logo"/>
                 </a>
             </li>
         </ul>

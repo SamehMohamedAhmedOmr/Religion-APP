@@ -1,0 +1,30 @@
+*{
+    font-family: 'Markazi Text', serif;
+    font-size: 21px;
+}
+
+body{
+    background-color: #f4f4f4 !important;
+}
+
+.question-title{
+    color: #002d6a !important;
+}
+
+.question-title a{
+    text-decoration: none;
+    color: #002d6a !important;
+}
+
+.question-title a:hover{
+    text-decoration: none;
+    color: #002d6a !important;
+}
+
+.question-related-title{
+    color: #ab1e56;;
+}
+
+.question-related-data{
+    color: #002d6a !important;
+}
