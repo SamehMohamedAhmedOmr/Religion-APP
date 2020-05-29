@@ -10,7 +10,7 @@ class Question extends Model
     use SoftDeletes;
     protected $table = 'questions';
     protected $fillable = [
-        'question', 'answer' , 'section_id', 'branch_id' , 'chapter_id'
+        'title', 'question', 'answer' , 'section_id', 'branch_id' , 'chapter_id'
     ];
 
     public function section(){

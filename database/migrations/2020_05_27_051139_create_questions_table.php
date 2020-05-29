@@ -28,6 +28,8 @@ class CreateQuestionsTable extends Migration
             $table->foreign('section_id')->references('id')->on('sections')
                 ->onDelete('cascade')->onUpdate('cascade');
 
+            $table->string('title');
+
             $table->longText('question');
 
             $table->longText('answer');

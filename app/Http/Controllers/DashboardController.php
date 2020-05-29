@@ -14,6 +14,9 @@ use Auth;
 class DashboardController extends Controller
 {
 
+    public function index (){
+        return redirect('dashboard');
+    }
     public function welcome()
     {
         $branches = Branch::count();
