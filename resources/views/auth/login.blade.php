@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Online Meeting | {{ __('login.LOGIN') }}</title>
+    <title>Fatwa | {{ __('login.LOGIN') }}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ URL::asset('library/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('library/base/vendor.bundle.base.css') }}">
@@ -17,7 +17,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ URL::asset('images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ URL::asset('images/fatwa_logo.webp') }}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -88,22 +88,23 @@
                                             {{ __('login.Keep me signed in') }}
                                         </label>
                                     </div>
-                                    <a href="{{ route('password.request') }}" class="auth-link text-black">
-                                        {{ __('login.Forgot password?') }}
-                                    </a>
+{{--                                    <a href="{{ route('password.request') }}" class="auth-link text-black">--}}
+{{--                                        {{ __('login.Forgot password?') }}--}}
+{{--                                    </a>--}}
                                 </div>
 
                                 <div class="my-3">
                                     <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                                       type="submit">{{ __('login.LOGIN') }}</a>
+                                            type="submit">{{ __('login.LOGIN') }}</button>
                                 </div>
 
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 login-half-bg d-flex flex-row">
+                    <div class="col-lg-6 login-half-bg d-flex flex-row" style="margin-top: -1px;">
                         <p class="text-white font-weight-medium text-center flex-grow align-self-end">{{ __('login.Copyright') }} &copy;
-                            2019 {{ __('login.All rights reserved.') }}</p>
+                            <script>document.write(new Date().getFullYear())</script>
+                            {{ __('login.All rights reserved.') }}</p>
                     </div>
                 </div>
             </div>

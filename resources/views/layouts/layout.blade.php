@@ -17,7 +17,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ URL::asset('images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ URL::asset('images/fatwa_logo.webp') }}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
