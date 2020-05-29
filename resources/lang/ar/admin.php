@@ -31,4 +31,5 @@ return array (
   'question' => 'السؤال',
   'question_number' => 'رقم السؤال',
   'answer' => 'الاجابة',
+  'fatwa_summary' => 'ملخص الفتوى',
 );

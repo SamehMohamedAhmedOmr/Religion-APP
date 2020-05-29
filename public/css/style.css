@@ -20988,7 +20988,7 @@ code {
 }
 
 .dashboard-tabs .item {
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 0;
 }
 
 @media (min-width: 577px) {
@@ -24002,3 +24002,29 @@ span.menu-title {
 input{
     font-size: 15px !important;
 }
+
+
+.dashboard-box{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color:#fff !important;
+}
+
+.dashboard-box:hover{
+    text-decoration: none;
+}
+
+.app-title{
+    text-align: center;
+    font-size: 18px;
+    color: #5eafdf;
+}
+
+.loader-title {
+    text-align: center;
+    font-size: 30px;
+    color: #5eafdf;
+}
+

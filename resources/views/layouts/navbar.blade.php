@@ -58,11 +58,13 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="position:fixed !important;">
     <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-            <a class="navbar-brand brand-logo" href="{{ url('dashboard') }}">
-                <img src="{{ URL::asset('images/logo.svg') }}" alt="logo"/>
+            <a class="navbar-brand brand-logo" href="{{ url('dashboard') }}"
+               style="transform: scale(1.5); width: 40% !important;">
+                <img src="{{ URL::asset('images/logo.png') }}"
+                     style="width: auto !important;" alt="logo"  />
             </a>
             <a class="navbar-brand brand-logo-mini" href="{{ url('dashboard') }}">
-                <img src="{{ URL::asset('images/logo-mini.svg') }}" alt="logo"/>
+                <img src="{{ URL::asset('images/logo.png') }}" alt="logo"/>
             </a>
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-sort-variant"></span>
@@ -71,56 +73,15 @@
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-4 w-100">
-            <li class="nav-item nav-search d-none d-lg-block w-100 position-relative" id="sea">
-                <div class="input-group">
-                    <div class="input-group-prepend search-icon">
-                            <span class="input-group-text" id="search">
-                                <i class="mdi mdi-magnify"></i>
-                            </span>
-                    </div>
-                    <input type="text" class="form-control" id="searchy" placeholder="{{ __('home.Search now') }}"
-                           aria-label="search" aria-describedby="search" autocomplete="off">
-                </div>
-                <div
-                    class="search-area position-absolute d-none {{ (App::getLocale() == 'ar') ? 'text-right' : 'text-left' }}">
-                    <h6 class="mt-2 mb-3" style="color:#000;">{{ __('home.result') }}</h6>
-                    <ul class="list-unstyled m-0 p-0" style="border: 1px solid #ccc;">
-                        <li style="color:#000;">{{ __('home.Enter To Search') }}</li>
-                    </ul>
-                </div>
+            <li class="nav-item nav-search d-block w-100 position-relative app-title" id="sea">
+                <a href="{{ url('dashboard') }}">
+                    <img src="{{ URL::asset('images/fatwa_logo.webp') }}"
+                         height="30px;" alt="logo"/>
+                </a>
+            </li>
         </ul>
 
         <ul class="navbar-nav navbar-nav-right">
-
-{{--            <li class="nav-item dropdown mr-4">--}}
-{{--                <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center"--}}
-{{--                   id="langDropDown" href="#" data-toggle="dropdown">--}}
-{{--                    <i class="mdi mdi-earth mx-0"></i>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="langDropDown">--}}
-{{--                    <p class="mb-0 font-weight-normal float-left dropdown-header">{{ __('home.Langauge') }}</p>--}}
-{{--                    <a class="dropdown-item" href="{{ url('setlocale/ar') }}">--}}
-{{--                        <div class="item-thumbnail">--}}
-{{--                            <img src="{{ URL::asset('images/flags/arabic.png') }}" alt="image" class="profile-pic">--}}
-{{--                        </div>--}}
-{{--                        <div class="item-content flex-grow">--}}
-{{--                            <h6 class="font-weight-normal" style="margin-top: 0.5rem;">--}}
-{{--                                {{ __('home.Arabic') }}--}}
-{{--                            </h6>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                    <a class="dropdown-item" href="{{ url('setlocale/en') }}">--}}
-{{--                        <div class="item-thumbnail">--}}
-{{--                            <img src="{{ URL::asset('images/flags/english.jpg') }}" alt="image" class="profile-pic">--}}
-{{--                        </div>--}}
-{{--                        <div class="item-content flex-grow">--}}
-{{--                            <h6 class="font-weight-normal" style="margin-top: 0.5rem;">--}}
-{{--                                {{ __('home.English') }}--}}
-{{--                            </h6>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </li>--}}
 
 
             <li class="nav-item nav-profile dropdown">

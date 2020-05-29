@@ -1,3 +1,11 @@
+<div class="form-group {{ $errors->has('title') ? 'has-error' : ''}} w-75">
+    <label for="faculty_name" class="control-label">{{ __('admin.fatwa_summary') }} <span style="color:red !important;">*</span></label>
+    <input class="form-control" name="title" required
+           type="text" id="title" placeholder="{{ __('admin.fatwa_summary') }}"
+           value="{{ isset($question->title) ? $question->title : old('title')}}" >
+    {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+</div>
+
 <div class="row w-md-75 w-100" aria-label="branch">
     <div class="col-md-12 col-12">
         <div class="form-group {{ $errors->has('branch_id') ? 'has-error' : ''}}">

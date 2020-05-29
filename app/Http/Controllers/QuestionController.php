@@ -64,6 +64,9 @@ class QuestionController extends Controller
     {
         $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
+
+            'title' => 'required|string|min:3|max:254',
+
             'question' => 'required|string|min:3|max:40000',
             'answer' => 'required|string|min:3|max:40000',
 
@@ -134,6 +137,9 @@ class QuestionController extends Controller
     {
         $delete_check = ',deleted_at,NULL';
         $validate = Validator::make($request->all(), [
+
+            'title' => 'required|string|min:3|max:254',
+
             'question' => 'required|string|min:3|max:40000',
             'answer' => 'required|string|min:3|max:40000',
 

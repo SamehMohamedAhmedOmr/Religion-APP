@@ -44,11 +44,13 @@ $(function () {
             },
 
             {
-                data: 'question',
-                render: function (question) {
-                    question = parseMe(question);
-                    question = (question.length > 100) ? question.substring(0, 100) + ' .....' : question;
-                    return question;
+                data: 'title',
+                render: function (title) {
+                    title = (title.length > 100) ? title.substring(0, 100) + ' .....' : title;
+
+                    // question = parseMe(question);
+                    // question = (question.length > 100) ? question.substring(0, 100) + ' .....' : question;
+                    return title;
                 }
             },
 

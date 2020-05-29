@@ -74,9 +74,11 @@
 
     <div class="whole-page-overlay" id="whole_page_loader">
         <div>
-            <h2 style="color:#d35400;">نظام الفتاوي</h2>
-            <img class="center-loader"  style="height:100px;" src="{{ URL::asset('images/loader.gif') }}"/>
-            <p style="color: #c0392b;">من فضلك انتظر</p>
+            <h2 style="" class="app-loader loader-title">
+                <img src="{{ URL::asset('images/fatwa_logo.webp') }}"
+                     height="50px;" alt="logo"/>
+            </h2>
+            <img class="center-loader"  style="height:200px;" src="{{ URL::asset('images/loader.gif') }}"/>
         </div>
     </div>
     <!-- container-scroller -->

@@ -16,4 +16,5 @@ return array (
   'question' => 'Question',
   'question_number' => 'Question Number',
   'answer' => 'Answer',
+  'fatwa_summary' => 'Fatwa Summary',
 );

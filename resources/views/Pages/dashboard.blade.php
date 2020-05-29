@@ -31,38 +31,42 @@
                                     <div
                                         class="col-md-5 col-6 mx-md-2 mx-1 mb-md-0 mb-3
                                         d-flex box
-                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #778beb; color: #fff;"
                                     >
-                                        <i class="fas fa-code-branch mx-3 icon-md"></i>
-                                        <div class="d-flex flex-column justify-content-around text-center">
-                                            <small class="mb-1">
-                                                {{ __('admin.branches') }}
-                                            </small>
-                                            <div class="dropdown">
-                                                <h5 class="mb-0 d-inline-block">
-                                                    {{ $branches }}
-                                                </h5>
+                                        <a class="dashboard-box p-3 w-100" href="{{ url('branches') }}">
+                                            <i class="fas fa-code-branch mx-3 icon-md"></i>
+                                            <div class="d-flex flex-column justify-content-around text-center">
+                                                <small class="mb-1">
+                                                    {{ __('admin.branches') }}
+                                                </small>
+                                                <div class="dropdown">
+                                                    <h5 class="mb-0 d-inline-block">
+                                                        {{ $branches }}
+                                                    </h5>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
 
                                     <div
                                         class="col-md-5 col-6 mx-md-2 mx-1
                                         d-flex box
-                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #cf6a87; color: #fff;"
                                     >
-                                        <i class="fas fa-copy mx-3 icon-md"></i>
-                                        <div class="d-flex flex-column justify-content-around text-center">
-                                            <small
-                                                class="mb-1">
-                                                {{ __('admin.chapters') }}
-                                            </small>
-                                            <h5 class="mr-2 mb-0">
-                                                {{ $chapters }}
-                                            </h5>
-                                        </div>
+                                        <a class="dashboard-box p-3 w-100" href="{{ url('chapters') }}">
+                                            <i class="fas fa-copy mx-3 icon-md"></i>
+                                            <div class="d-flex flex-column justify-content-around text-center">
+                                                <small
+                                                    class="mb-1">
+                                                    {{ __('admin.chapters') }}
+                                                </small>
+                                                <h5 class="mr-2 mb-0">
+                                                    {{ $chapters }}
+                                                </h5>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -72,37 +76,41 @@
                                     <div
                                         class="col-md-5 col-6 mx-md-2 mx-1 mb-md-0 mb-3
                                         d-flex box
-                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #e77f67; color: #fff;"
                                     >
-                                        <i class="fas fa-sticky-note mx-3 icon-md"></i>
-                                        <div class="d-flex flex-column justify-content-around text-center">
-                                            <small
-                                                class="mb-1">
-                                                {{ __('admin.sections') }}
-                                            </small>
-                                            <h5 class="mr-2 mb-0">
-                                                {{ $sections }}
-                                            </h5>
-                                        </div>
+                                        <a class="dashboard-box p-3 w-100" href="{{ url('sections') }}">
+                                            <i class="fas fa-sticky-note mx-3 icon-md"></i>
+                                            <div class="d-flex flex-column justify-content-around text-center">
+                                                <small
+                                                    class="mb-1">
+                                                    {{ __('admin.sections') }}
+                                                </small>
+                                                <h5 class="mr-2 mb-0">
+                                                    {{ $sections }}
+                                                </h5>
+                                            </div>
+                                        </a>
                                     </div>
 
                                     <div
                                         class="col-md-5 col-6 mx-md-2 mx-1
                                         d-flex box
-                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #786fa6; color: #fff;"
                                     >
-                                        <i class="fas fa-keyboard mx-3 icon-md"></i>
-                                        <div class="d-flex flex-column justify-content-around text-center">
-                                            <small
-                                                class="mb-1">
-                                                {{__("admin.keywords")}}
-                                            </small>
-                                            <h5 class="mr-2 mb-0">
-                                                {{ $keywords }}
-                                            </h5>
-                                        </div>
+                                        <a class="dashboard-box p-3 w-100" href="{{ url('keywords') }}">
+                                            <i class="fas fa-keyboard mx-3 icon-md"></i>
+                                            <div class="d-flex flex-column justify-content-around text-center">
+                                                <small
+                                                    class="mb-1">
+                                                    {{__("admin.keywords")}}
+                                                </small>
+                                                <h5 class="mr-2 mb-0">
+                                                    {{ $keywords }}
+                                                </h5>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -112,19 +120,21 @@
                                     <div
                                         class="d-flex box
                                         col-md-5 col-6 mx-md-2 mx-1
-                                        flex-grow-1 align-items-center justify-content-center p-3 item"
+                                        flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #63cdda; color: #fff;"
                                     >
-                                        <i class="fas fa-question-circle mx-3 icon-md"></i>
-                                        <div class="d-flex flex-column justify-content-around text-center">
-                                            <small
-                                                class="mb-1">
-                                                {{__("admin.Questions")}}
-                                            </small>
-                                            <h5 class="mr-2 mb-0">
-                                                {{ $questions }}
-                                            </h5>
-                                        </div>
+                                        <a class="dashboard-box p-3 w-100" href="{{ url('questions') }}">
+                                            <i class="fas fa-question-circle mx-3 icon-md"></i>
+                                            <div class="d-flex flex-column justify-content-around text-center">
+                                                <small
+                                                    class="mb-1">
+                                                    {{__("admin.Questions")}}
+                                                </small>
+                                                <h5 class="mr-2 mb-0">
+                                                    {{ $questions }}
+                                                </h5>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
