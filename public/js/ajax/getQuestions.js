@@ -46,11 +46,18 @@ $(function () {
             {
                 data: 'title',
                 render: function (title) {
-                    title = (title.length > 100) ? title.substring(0, 100) + ' .....' : title;
+                    title = (title.length > 70) ? title.substring(0, 70) + ' .....' : title;
 
                     // question = parseMe(question);
                     // question = (question.length > 100) ? question.substring(0, 100) + ' .....' : question;
                     return title;
+                }
+            },
+
+            {
+                data: 'views',
+                render: function (views) {
+                    return views;
                 }
             },
 
