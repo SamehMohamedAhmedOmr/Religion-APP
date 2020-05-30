@@ -71,6 +71,8 @@ Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('fatwa/{id}/{slug}', 'HomeController@get');
 
-Route::get('translations', function () {
-    return view('vendor.translation-manager.index');
-});
+
+//Route::get('translations', function () {
+//    return view('vendor.translation-manager.index');
+//});
+

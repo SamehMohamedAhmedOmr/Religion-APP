@@ -1,5 +1,5 @@
 <?php
 
 return array (
-  'app_name' => 'App name',
+  'app_name' => 'Fatwa',
 );

@@ -6,7 +6,10 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Fatwa | {{ __('login.LOGIN') }}</title>
+    <title>
+        {{ __('home.app_name') }} |
+        {{ __('login.LOGIN') }}
+    </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ URL::asset('library/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('library/base/vendor.bundle.base.css') }}">
