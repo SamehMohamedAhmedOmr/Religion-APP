@@ -88,6 +88,16 @@
     </div>
     <!-- container-scroller -->
 
+    <div class="footer-home text-center p-3">
+
+        <p class="text-white font-weight-medium text-center flex-grow align-self-end m-0">
+            {{ __('login.Copyright') }} &copy;
+            <script>document.write(new Date().getFullYear())</script>
+            {{ __('login.All rights reserved.') }}
+        </p>
+
+    </div>
+
     @include('layouts.scripts')
 
     <script id='input-errors' data-errorMSG="{{ __('placeholder.Please Fill out This Field') }}">

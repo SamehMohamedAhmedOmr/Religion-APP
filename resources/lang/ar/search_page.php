@@ -12,4 +12,5 @@ return array (
   'search' => 'ابحث',
   'most_visitors' => 'الأكثر مشاهدة',
   'no_result' => 'لا توجد نتائج',
+  'views' => 'المشاهدات',
 );

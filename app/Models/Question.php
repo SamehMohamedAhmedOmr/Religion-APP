@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property mixed question
+ * @property mixed title
  */
 class Question extends Model
 {
@@ -53,6 +54,10 @@ class Question extends Model
         }
 
         return $question;
+    }
+
+    public function convertToSlug(){
+        return str_replace(' ', '-', $this->title);
     }
 
 }

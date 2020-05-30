@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
 
-                <form method="POST" action="{{ url('questions') }}"
+                <form method="GET" action="{{ url('/') }}"
                       class="d-block w-100"
                       accept-charset="UTF-8"
                       enctype="multipart/form-data">
@@ -26,8 +26,8 @@
                             {{ __('search_page.search_type') }}
                         </label>
                         <select class="form-control specialSelect" name="search_type" required id="search_type">
-                            <option selected value="0">{{ __('search_page.search_by_title') }}</option>
-                            <option value="1">{{ __('search_page.search_by_fatwa_number') }}</option>
+                            <option selected value="text">{{ __('search_page.search_by_title') }}</option>
+                            <option value="fatwa_number">{{ __('search_page.search_by_fatwa_number') }}</option>
 {{--                            <option value="2">{{ __('search_page.search_by_keywords') }}</option>--}}
                         </select>
                     </div>
@@ -38,7 +38,7 @@
                         </label>
                         <input class="form-control" name="search_key" required
                                type="text" id="search_key" placeholder="{{ __('search_page.search_words') }}"
-                               value="{{ isset($question->title) ? $question->title : old('search_key')}}">
+                               value="">
                         {!! $errors->first('search_key', '<p class="help-block">:message</p>') !!}
                     </div>
 

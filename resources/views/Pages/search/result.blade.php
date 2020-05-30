@@ -25,7 +25,7 @@
 
                         <div class="col-md-8 col-12">
                             <p class="text-right question-title">
-                                <a href="{{ url('fatwa/'.$question->id.'/'.$question->title )}}">
+                                <a href="{{ url('fatwa/'.$question->id.'/'.$question->convertToSlug() )}}">
                                     {{ $question->title }}
                                 </a>
                             </p>
@@ -61,7 +61,7 @@
                                  height="40px;" alt="logo"/>
                         </div>
                         <div class="col-11 pt-1 text-right">
-                            <div>
+                            <div class="question">
                                 @if(strlen($question->question) > 300)
                                     {{ $question->questionAbbreviation()  }}
                                 @else
@@ -72,7 +72,7 @@
                     </div>
 
                     <div aria-label="more" class="mt-2">
-                        <a class="question-link btn btn-light-blue" href="{{ url('fatwa/'.$question->id.'/'.$question->title )}}">
+                        <a class="question-link btn btn-light-blue" href="{{ url('fatwa/'.$question->id.'/'.$question->convertToSlug() )}}">
                             {{ __('admin.more') }}
                         </a>
                     </div>

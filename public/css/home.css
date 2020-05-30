@@ -3,6 +3,15 @@
     font-size: 21px;
 }
 
+.answer , .question{
+    line-height: 2 !important;
+}
+
+.answer *, .question *{
+    font-family: 'Markazi Text', serif !important;
+    font-size: 21px !important;
+}
+
 body{
     background-color: #f4f4f4 !important;
 }
@@ -71,4 +80,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.footer-home{
+    background-color: #2290ba;
+    border-color: #2290ba;
 }

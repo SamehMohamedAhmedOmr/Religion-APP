@@ -23,13 +23,13 @@
 
             @foreach($most_views as $fatwa)
 
-                <div aria-label="single-fatwa">
+                <div aria-label="single-fatwa" class="mb-3">
 
                     <div class="row" aria-label="fatwa-titles">
 
                         <div class="col-9">
-                            <p class="text-right question-title">
-                                <a href="{{ url('fatwa/'.$fatwa->id.'/'.$fatwa->title )}}">
+                            <p class="text-right question-title" style="line-height: 1.5;">
+                                <a href="{{ url('fatwa/'.$fatwa->id.'/'.$fatwa->convertToSlug() )}}">
                                     {{ $fatwa->title }}
                                 </a>
                             </p>
