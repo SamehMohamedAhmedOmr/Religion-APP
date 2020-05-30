@@ -34,16 +34,16 @@
 </li>
 
 
-<!-- keywords -->
-<li class="nav-item">
-    <a class="nav-link" href="{{ url('keywords') }}">
-        <i class="fas fa-keyboard menu-icon" style="font-size:0.9rem !important;"></i>
-        <span class="menu-title">
-            {{ __('admin.manage') }}
-            {{ __('admin.keywords') }}
-        </span>
-    </a>
-</li>
+{{--<!-- keywords -->--}}
+{{--<li class="nav-item">--}}
+{{--    <a class="nav-link" href="{{ url('keywords') }}">--}}
+{{--        <i class="fas fa-keyboard menu-icon" style="font-size:0.9rem !important;"></i>--}}
+{{--        <span class="menu-title">--}}
+{{--            {{ __('admin.manage') }}--}}
+{{--            {{ __('admin.keywords') }}--}}
+{{--        </span>--}}
+{{--    </a>--}}
+{{--</li>--}}
 
 
 <!-- Questions -->

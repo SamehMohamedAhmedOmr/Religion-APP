@@ -85,8 +85,16 @@
 
     @include('layouts.scripts')
 
-    <script id='input-errors' data-errorMSG="{{ __('placeholder.Please Fill out This Field') }}">
+    <script id='input-errors'
+            data-tooltip ="{{ __('home.fill_input') }}"
+            data-errorMSG="{{ __('placeholder.Please Fill out This Field') }}"
+    >
         $(function(){
+
+            let tooltip = $('#input-errors').data('tooltip');
+
+            $('input').tooltip({'trigger':'focus', 'title': tooltip });
+
 
             setTimeout(function(){
                 $('.whole-page-overlay').slideUp();

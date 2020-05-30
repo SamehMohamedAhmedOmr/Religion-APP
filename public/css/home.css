@@ -14,11 +14,12 @@ body{
 .question-title a{
     text-decoration: none;
     color: #002d6a !important;
+    transition: all 0.5s ease-out;
 }
 
 .question-title a:hover{
     text-decoration: none;
-    color: #002d6a !important;
+    color: #ab1e56 !important;
 }
 
 .question-link{
@@ -42,10 +43,32 @@ body{
 .btn-light-blue {
     background-color: #2290ba;
     border-color: #2290ba;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .btn-light-blue:hover {
     background-color: #55bce3;
     border-color: #55bce3;
+}
+
+.search-title{
+    background-color: #2290ba;
+    border-color: #2290ba;
+    width: 160px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.views-label{
+    background-color: #2290ba;
+    border-color: #2290ba;
+    text-align: center;
+    width: 60px;
+}
+
+.views-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

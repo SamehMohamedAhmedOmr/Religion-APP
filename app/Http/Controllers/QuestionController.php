@@ -33,7 +33,7 @@ class QuestionController extends Controller
 
     public function getAjax()
     {
-        $question= Question::with('keywords' , 'branch')->get();
+        $question= Question::orderBy('created_at','desc')->with('keywords' , 'branch')->get();
         try {
             return Datatables::of($question)->addIndexColumn()->make(true);
         } catch (Exception $e) {
@@ -49,9 +49,9 @@ class QuestionController extends Controller
     public function create()
     {
         $branches = Branch::all();
-        $keywords = Keyword::all();
+//        $keywords = Keyword::all();
 
-        return view('admin.questions.create',compact('branches', 'keywords'));
+        return view('admin.questions.create',compact('branches'));
     }
 
     /**
@@ -71,8 +71,8 @@ class QuestionController extends Controller
             'question' => 'required|string|min:3|max:40000',
             'answer' => 'required|string|min:3|max:40000',
 
-            'keywords' => 'required|array',
-            'keywords.*' => 'required|integer|exists:keywords,id'.$delete_check,
+//            'keywords' => 'required|array',
+//            'keywords.*' => 'required|integer|exists:keywords,id'.$delete_check,
 
             'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
             'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
@@ -86,7 +86,7 @@ class QuestionController extends Controller
 
         $question = Question::create($requestData);
 
-        $question->keywords()->attach($request->keywords);
+//        $question->keywords()->attach($request->keywords);
 
         return redirect('questions')->with('flash_message', __('flash_message.added'));
     }
@@ -119,13 +119,13 @@ class QuestionController extends Controller
 
         $branches = Branch::all();
 
-        $keywords = Keyword::all();
+//        $keywords = Keyword::all();
 
         $chapters = Chapter::where('branch_id',$question->branch_id)->get();
 
         $sections = Section::where('chapter_id',$question->chapter_id)->get();
 
-        return view('admin.questions.edit', compact('question','branches', 'chapters','sections', 'keywords'));
+        return view('admin.questions.edit', compact('question','branches', 'chapters','sections'));
     }
 
     /**
@@ -146,8 +146,8 @@ class QuestionController extends Controller
             'question' => 'required|string|min:3|max:40000',
             'answer' => 'required|string|min:3|max:40000',
 
-            'keywords' => 'required|array',
-            'keywords.*' => 'required|integer|exists:keywords,id'.$delete_check,
+//            'keywords' => 'required|array',
+//            'keywords.*' => 'required|integer|exists:keywords,id'.$delete_check,
 
             'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
             'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
@@ -163,10 +163,9 @@ class QuestionController extends Controller
 
         $question->update($requestData);
 
-
-        $question->keywords()->detach();
-
-        $question->keywords()->attach($request->keywords);
+//        $question->keywords()->detach();
+//
+//        $question->keywords()->attach($request->keywords);
 
         return redirect('questions')->with('flash_message',  __('flash_message.edited'));
     }

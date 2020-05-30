@@ -99,30 +99,6 @@
                                         flex-grow-1 align-items-center justify-content-center p-0 item"
                                         style="background-color: #786fa6; color: #fff;"
                                     >
-                                        <a class="dashboard-box p-3 w-100" href="{{ url('keywords') }}">
-                                            <i class="fas fa-keyboard mx-3 icon-md"></i>
-                                            <div class="d-flex flex-column justify-content-around text-center">
-                                                <small
-                                                    class="mb-1">
-                                                    {{__("admin.keywords")}}
-                                                </small>
-                                                <h5 class="mr-2 mb-0">
-                                                    {{ $keywords }}
-                                                </h5>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                                <div class="row justify-content-around mb-4">
-
-                                    <div
-                                        class="d-flex box
-                                        col-md-5 col-6 mx-md-2 mx-1
-                                        flex-grow-1 align-items-center justify-content-center p-0 item"
-                                        style="background-color: #63cdda; color: #fff;"
-                                    >
                                         <a class="dashboard-box p-3 w-100" href="{{ url('questions') }}">
                                             <i class="fas fa-question-circle mx-3 icon-md"></i>
                                             <div class="d-flex flex-column justify-content-around text-center">
@@ -137,7 +113,51 @@
                                         </a>
                                     </div>
 
+{{--                                    <div--}}
+{{--                                        class="col-md-5 col-6 mx-md-2 mx-1--}}
+{{--                                        d-flex box--}}
+{{--                                        flex-grow-1 align-items-center justify-content-center p-0 item"--}}
+{{--                                        style="background-color: #786fa6; color: #fff;"--}}
+{{--                                    >--}}
+{{--                                        <a class="dashboard-box p-3 w-100" href="{{ url('keywords') }}">--}}
+{{--                                            <i class="fas fa-keyboard mx-3 icon-md"></i>--}}
+{{--                                            <div class="d-flex flex-column justify-content-around text-center">--}}
+{{--                                                <small--}}
+{{--                                                    class="mb-1">--}}
+{{--                                                    {{__("admin.keywords")}}--}}
+{{--                                                </small>--}}
+{{--                                                <h5 class="mr-2 mb-0">--}}
+{{--                                                    {{ $keywords }}--}}
+{{--                                                </h5>--}}
+{{--                                            </div>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+
                                 </div>
+
+{{--                                <div class="row justify-content-around mb-4">--}}
+
+{{--                                    <div--}}
+{{--                                        class="d-flex box--}}
+{{--                                        col-md-5 col-6 mx-md-2 mx-1--}}
+{{--                                        flex-grow-1 align-items-center justify-content-center p-0 item"--}}
+{{--                                        style="background-color: #63cdda; color: #fff;"--}}
+{{--                                    >--}}
+{{--                                        <a class="dashboard-box p-3 w-100" href="{{ url('questions') }}">--}}
+{{--                                            <i class="fas fa-question-circle mx-3 icon-md"></i>--}}
+{{--                                            <div class="d-flex flex-column justify-content-around text-center">--}}
+{{--                                                <small--}}
+{{--                                                    class="mb-1">--}}
+{{--                                                    {{__("admin.Questions")}}--}}
+{{--                                                </small>--}}
+{{--                                                <h5 class="mr-2 mb-0">--}}
+{{--                                                    {{ $questions }}--}}
+{{--                                                </h5>--}}
+{{--                                            </div>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+
+{{--                                </div>--}}
 
                             </div>
                         </div>

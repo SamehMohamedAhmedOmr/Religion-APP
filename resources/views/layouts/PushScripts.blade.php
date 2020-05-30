@@ -2,7 +2,7 @@
 
 <script type="text/javascript" src="https://js.pusher.com/3.1/pusher.min.js"></script>
 
-<script type="text/javascript" data-id="{{ Auth::user()->id }}" id='toPushID' data-lang="{{ App::getLocale() }}">
+<script type="text/javascript" data-id="{{ Auth::id() }}" id='toPushID' data-lang="{{ App::getLocale() }}">
     function zero() {
         var bell = document.getElementById('number');
         var text = bell.innerHTML;

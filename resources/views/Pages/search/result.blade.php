@@ -1,5 +1,19 @@
 <div aria-label="results">
 
+    <div aria-label="title" class="text-right mb-4 search-title py-1">
+        {{ ($key) ?  __('search_page.results')  :  __('search_page.last_questions') }}
+    </div>
+
+    @if(count($questions) == 0)
+        <div class="card bg-light mb-4">
+            <div class="card-body">
+                <div class="text-center">
+                    {{ __('search_page.no_result') }}
+                </div>
+            </div>
+        </div>
+    @endif
+
     @foreach($questions as $question)
 
         <div aria-label="single-fatwa">
@@ -43,7 +57,6 @@
 
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center">
-{{--                            <i class="fas fa-question-circle mx-1 icon-md"></i>--}}
                             <img src="{{ URL::asset('images/question.png') }}"
                                  height="40px;" alt="logo"/>
                         </div>

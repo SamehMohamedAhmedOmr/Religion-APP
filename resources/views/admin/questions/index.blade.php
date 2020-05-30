@@ -35,8 +35,8 @@
                             <table class="table col-11 m-auto p-0 table-hover" id="get-data">
                                 <thead>
                                     <tr>
-                                        <th>{{ __('admin.question_number') }}</th>
-                                        <th>{{ __('admin.fatwa_summary') }}</th>
+                                        <th class="no-sort">{{ __('admin.question_number') }}</th>
+                                        <th class="no-sort">{{ __('admin.fatwa_summary') }}</th>
                                         <th class="no-sort">{{ __('admin.branch') }}</th>
                                         <th class="no-sort">{{ __('admin.options') }}</th>
                                     </tr>

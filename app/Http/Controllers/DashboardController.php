@@ -22,11 +22,11 @@ class DashboardController extends Controller
         $branches = Branch::count();
         $sections = Section::count();
         $chapters = Chapter::count();
-        $keywords = Keyword::count();
+//        $keywords = Keyword::count();
         $questions = Question::count();
 
         return view('pages.dashboard',
-            compact('branches','sections','chapters','keywords', 'questions'));
+            compact('branches','sections','chapters', 'questions'));
     }
 
 }

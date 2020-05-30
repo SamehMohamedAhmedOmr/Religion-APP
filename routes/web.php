@@ -51,8 +51,8 @@ Route::middleware('auth')->group(function () {
     Route::get('getSections/{chapter_id}', 'SectionController@getSections');
 
     // Questions
-    Route::resource('keywords', 'KeywordController');
-    Route::get('getKeywordsAjax', 'KeywordController@getAjax');
+//    Route::resource('keywords', 'KeywordController');
+//    Route::get('getKeywordsAjax', 'KeywordController@getAjax');
 
     // Questions
     Route::resource('questions', 'QuestionController');

@@ -1,9 +1,9 @@
 <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}} w-75">
-    <label for="faculty_name" class="control-label">{{ __('admin.fatwa_summary') }} <span style="color:red !important;">*</span></label>
+    <label for="title" class="control-label">{{ __('admin.fatwa_summary') }} <span style="color:red !important;">*</span></label>
     <input class="form-control" name="title" required
            type="text" id="title" placeholder="{{ __('admin.fatwa_summary') }}"
            value="{{ isset($question->title) ? $question->title : old('title')}}" >
-    {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+    {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 </div>
 
 <div class="row w-md-75 w-100" aria-label="branch">
@@ -86,32 +86,32 @@
     </div>
 </div>
 
-<div class="row w-md-75 w-100" aria-label="keywords">
-    <div class="col-md-12 col-12">
-        <div class="form-group {{ $errors->has('branch_id') ? 'has-error' : ''}}">
-            <label for="faculty_id" class="control-label">{{ __('admin.keywords') }} <span style="color:red !important;">*</span></label>
-            <label class="d-block w-100">
-                <select class="form-control keywords" name="keywords[]" required id="keywords" multiple>
-                    <option selected hidden value="">{{ __('placeholder.Select Keywords') }}</option>
+{{--<div class="row w-md-75 w-100" aria-label="keywords">--}}
+{{--    <div class="col-md-12 col-12">--}}
+{{--        <div class="form-group {{ $errors->has('keywords') ? 'has-error' : ''}}">--}}
+{{--            <label for="faculty_id" class="control-label">{{ __('admin.keywords') }} <span style="color:red !important;">*</span></label>--}}
+{{--            <label class="d-block w-100">--}}
+{{--                <select class="form-control keywords" name="keywords[]" required id="keywords" multiple>--}}
+{{--                    <option selected hidden value="">{{ __('placeholder.Select Keywords') }}</option>--}}
 
-                    @foreach ($keywords as $obj)
-                        @if (isset($question))
-                            <option value="{{ $obj->id}}"
-                                {{ ($question->keywords->pluck('id')->contains($obj->id) )?"selected":"" }}>
-                                {{ $obj->name }}
-                            </option>
-                        @else
-                            <option value="{{ $obj->id}}">
-                                {{ $obj->name }}
-                            </option>
-                        @endif
-                    @endforeach
-                </select>
-            </label>
-            {!! $errors->first('branch_id', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>
-</div>
+{{--                    @foreach ($keywords as $obj)--}}
+{{--                        @if (isset($question))--}}
+{{--                            <option value="{{ $obj->id}}"--}}
+{{--                                {{ ($question->keywords->pluck('id')->contains($obj->id) )?"selected":"" }}>--}}
+{{--                                {{ $obj->name }}--}}
+{{--                            </option>--}}
+{{--                        @else--}}
+{{--                            <option value="{{ $obj->id}}">--}}
+{{--                                {{ $obj->name }}--}}
+{{--                            </option>--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--            </label>--}}
+{{--            {!! $errors->first('keywords', '<p class="help-block">:message</p>') !!}--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <div class="row w-100" aria-label="questions and answer">
 

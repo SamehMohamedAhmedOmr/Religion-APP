@@ -70,7 +70,8 @@ $(function () {
                     return edit + '&nbsp;' + remove;
                 }
             },
-        ]
+        ],
+        order:[[0, 'desc']]
     });
 
     $('.message').slideDown(function () {
