@@ -84,4 +84,9 @@
 
     @endforeach
 
+    <div class="my-5">
+        {{ $questions->links() }}
+    </div>
+
+
 </div>

@@ -185,5 +185,9 @@ return [
         'answer'              => 'الاجابة',
         'keywords'            => 'الكلمات الدلالية',
 
+        // search page
+        'search_type'         => 'نوع البحث',
+        'search_key'          => 'نص البحث',
+
     ],
 ];

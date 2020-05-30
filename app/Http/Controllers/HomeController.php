@@ -67,16 +67,29 @@ class HomeController extends Controller
     }
 
     private function getLastsTenRecords(){
-        return Question::orderBy('created_at','desc')->take(10)->get();
+        return Question::orderBy('created_at','desc')->paginate(10);
     }
 
     private function searchById($request){
-        return Question::where('id', $request->search_key)->take(1)->get();
+        return Question::where('id', $request->search_key)->take(1)->paginate(1);
     }
 
     private function searchByTitle($request){
-        return Question::where('title' , 'LIKE' , '%'.$request->search_key . '%')
-            ->orderBy('created_at','desc')->take(10)->get();
+        $question = Question::where('title' , 'LIKE' , '%'.$request->search_key . '%')
+            ->orderBy('created_at','desc')->paginate(10);
+
+        return $this->attachQueryString($request, $question);
+    }
+
+    private function  attachQueryString($request, $question){
+        $querystringArray = [
+            'search_type' => $request->search_type,
+            'search_key' => $request->search_key
+        ];
+
+        $question->appends($querystringArray);
+
+        return $question;
     }
 
     public function get($id){

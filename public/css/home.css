@@ -86,3 +86,11 @@ body{
     background-color: #2290ba;
     border-color: #2290ba;
 }
+
+.page-item.active .page-link{
+    background-color: #2290ba !important;
+    border-color: #2290ba !important;
+}
+.page-link{
+    color: #2290ba;
+}
