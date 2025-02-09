@@ -25,7 +25,7 @@ class DashboardController extends Controller
 //        $keywords = Keyword::count();
         $questions = Question::count();
 
-        return view('pages.dashboard',
+        return view('Pages.dashboard',
             compact('branches','sections','chapters', 'questions'));
     }
 

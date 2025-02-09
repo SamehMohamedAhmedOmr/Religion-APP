@@ -28,6 +28,7 @@ $(function () {
     }
 
     $('#get-data').DataTable({
+
         "language": arabicLanguage,
         processing: true,
         serverSide: true,
@@ -37,13 +38,22 @@ $(function () {
         },
         columns: [
             {
+                data: 'DT_RowIndex',
+                orderable: false,
+                render: function (DT_RowIndex) {
+                    return DT_RowIndex;
+                }
+            },
+            {
                 data: 'name',
+                orderable: false,
                 render: function (name) {
                     return name;
                 }
             },
             {
                 data: 'branch',
+                orderable: false,
                 render: function (branch) {
                     return (branch) ? branch.name : '';
                 }
@@ -57,7 +67,8 @@ $(function () {
                     return edit + '&nbsp;' + remove;
                 }
             },
-        ]
+        ],
+
     });
 
     $('.message').slideDown(function () {

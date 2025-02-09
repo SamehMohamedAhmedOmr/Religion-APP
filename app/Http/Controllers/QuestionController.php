@@ -76,7 +76,7 @@ class QuestionController extends Controller
 
             'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
             'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
-            'section_id' => 'required|integer|exists:sections,id'.$delete_check,
+            'section_id' => 'integer|exists:sections,id'.$delete_check,
 
         ])->validate();
 
@@ -151,7 +151,7 @@ class QuestionController extends Controller
 
             'branch_id' => 'required|integer|exists:branches,id'.$delete_check,
             'chapter_id' => 'required|integer|exists:chapters,id'.$delete_check,
-            'section_id' => 'required|integer|exists:sections,id'.$delete_check,
+            'section_id' => 'integer|exists:sections,id'.$delete_check,
 
         ])->validate();
 

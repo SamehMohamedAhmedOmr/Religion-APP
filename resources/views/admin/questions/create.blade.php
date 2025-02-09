@@ -64,7 +64,7 @@
 
     </script>
 
-    <script src="{{ URL::asset('js/ajax/getLists.js') }}"></script>
+    <script src="{{ URL::asset('js/ajax/getLists4.js') }}"></script>
 
     <script src="{{ URL::asset('js/jquery.richtext.min.js') }}"></script>
 

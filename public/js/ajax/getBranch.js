@@ -36,6 +36,13 @@ $(function () {
         },
         columns: [
             {
+                data: 'DT_RowIndex',
+                orderable: false,
+                render: function (DT_RowIndex) {
+                    return DT_RowIndex;
+                }
+            },
+            {
                 data: 'name',
                 render: function (name) {
                     return name;

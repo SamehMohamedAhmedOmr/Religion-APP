@@ -34,8 +34,9 @@
                             <table class="table col-11 m-auto p-0 table-hover" id="get-data">
                                 <thead>
                                     <tr>
-                                        <th>{{ __('admin.Name') }}</th>
-                                        <th>{{ __('admin.branch') }}</th>
+                                        <th class="no-sort">{{ __('admin.orders') }}</th>
+                                        <th class="no-sort">{{ __('admin.Name') }}</th>
+                                        <th class="no-sort">{{ __('admin.branch') }}</th>
                                         <th class="no-sort">{{ __('admin.options') }}</th>
                                     </tr>
                                 </thead>

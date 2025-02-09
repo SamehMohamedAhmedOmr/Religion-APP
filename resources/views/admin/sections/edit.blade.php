@@ -58,6 +58,6 @@
             <script type="text/javascript">
                 $('.specialSelect').selectize();
             </script>
-            <script src="{{ URL::asset('js/ajax/getLists.js') }}"></script>
+            <script src="{{ URL::asset('js/ajax/getLists4.js') }}"></script>
     </div>
 @endsection

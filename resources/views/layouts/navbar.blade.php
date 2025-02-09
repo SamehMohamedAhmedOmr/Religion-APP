@@ -86,12 +86,12 @@
 
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="{{ URL::asset('storage/user_pic/default/default_default.png') }}" alt="profile">
+                    <img src="{{ URL::asset('images/user_pic/default/default_default.png') }}" alt="profile">
 
 {{--                    @if (Auth::user()->image == 'default_default.png')--}}
-{{--                        <img src="{{ URL::asset('storage/user_pic/default/'.Auth::user()->image) }}" alt="profile">--}}
+{{--                        <img src="{{ URL::asset('images/user_pic/default/'.Auth::user()->image) }}" alt="profile">--}}
 {{--                    @else--}}
-{{--                        <img src="{{ URL::asset('storage/user_pic/'.Auth::user()->id.'/'.Auth::user()->image) }}"--}}
+{{--                        <img src="{{ URL::asset('images/user_pic/'.Auth::user()->id.'/'.Auth::user()->image) }}"--}}
 {{--                             alt="profile">--}}
 {{--                    @endif--}}
                     <span class="nav-profile-name">{{ Auth::user()->name }}</span>
@@ -135,7 +135,7 @@
             </div>
             <div class="modal-body">
                 <div class="d-flex justify-content-center flex-column align-items-center">
-                    <img src="{{ URL::asset('storage/user_pic/default/default_default.png') }}" alt="profile">
+                    <img src="{{ URL::asset('images/user_pic/default/default_default.png') }}" alt="profile">
                     <br>
                     <h3 class="media-heading">{{$profile->name}}</h3>
                     <span class="mb-2"><strong>{{__("admin.Email")}}: </strong></span>

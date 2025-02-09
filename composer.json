@@ -13,13 +13,14 @@
         "barryvdh/laravel-translation-manager": "^0.5.3",
         "fideloper/proxy": "^4.0",
         "goodnesskay/laravelpdfviewer": "^1.0",
+        "jms/serializer-bundle": "^3.6",
+        "khill/lavacharts": "3.1.*",
         "kreait/firebase-php": "4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8",
-        "yajra/laravel-datatables-oracle": "~9.0",
-        "khill/lavacharts" : "3.1.*",
-        "tom-lingham/searchy" : "2.*"
+        "tom-lingham/searchy": "2.*",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "appzcoder/crud-generator": "^3.0",

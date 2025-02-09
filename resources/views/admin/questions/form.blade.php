@@ -62,28 +62,29 @@
             </div>
     </div>
 
-    <div class="col-md-6 col-12" id="sections">
-        <div class="form-group {{ $errors->has('section_id') ? 'has-error' : ''}}">
-                <label for="chapter_id" class="control-label">{{ __('admin.section') }} <span style="color:red !important;">*</span></label>
-                <label class="d-block w-100">
-                    <select class="form-control specialSelect" name="section_id" required  id="section_id">
-                        <option selected hidden value="">{{ __('placeholder.Select Section') }}</option>
+    <!--<div class="col-md-6 col-12" id="sections">-->
+    <!--    <div class="form-group {{ $errors->has('section_id') ? 'has-error' : ''}}">-->
+    <!--            <label for="chapter_id" class="control-label">{{ __('admin.section') }} <span style="color:red !important;">*</span></label>-->
+    <!--            <label class="d-block w-100">-->
+    <!--                <select class="form-control specialSelect" name="section_id" id="section_id">-->
+    <!--                    <option selected hidden value="">{{ __('placeholder.Select Section') }}</option>-->
 
-                        <entity>
-                            @if (isset($question))
-                                @foreach ($sections as $obj)
-                                    <option value="{{ $obj->id}}" {{ ($question->section_id == $obj->id)?"selected":"" }}>
-                                        {{ $obj->name }}
-                                    </option>
-                                @endforeach
-                            @endif
-                        </entity>
+    <!--                    <entity>-->
+    <!--                        @if (isset($question))-->
+    <!--                            @foreach ($sections as $obj)-->
+    <!--                                <option value="{{ $obj->id}}" {{ ($question->section_id == $obj->id)?"selected":"" }}>-->
+    <!--                                    {{ $obj->name }}-->
+    <!--                                </option>-->
+    <!--                            @endforeach-->
+    <!--                        @endif-->
+    <!--                    </entity>-->
 
-                    </select>
-                </label>
-                {!! $errors->first('section_id', '<p class="help-block">:message</p>') !!}
-            </div>
-    </div>
+    <!--                </select>-->
+    <!--            </label>-->
+    <!--            {!! $errors->first('section_id', '<p class="help-block">:message</p>') !!}-->
+    <!--        </div>-->
+    <!--</div>-->
+    
 </div>
 
 {{--<div class="row w-md-75 w-100" aria-label="keywords">--}}

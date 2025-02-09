@@ -64,7 +64,7 @@
 </style>
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="position:fixed !important;">
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end navbar-home">
-        <ul class="navbar-nav mr-lg-4 w-100">
+        <ul class="navbar-nav p-0 w-100">
             <li class="nav-item nav-search d-block w-100 position-relative app-title" id="sea">
                 <a href="{{ url('/') }}">
                     <img src="{{ URL::asset('images/fatwa_logo_white.webp') }}"

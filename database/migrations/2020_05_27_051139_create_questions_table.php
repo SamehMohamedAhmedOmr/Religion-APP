@@ -20,11 +20,11 @@ class CreateQuestionsTable extends Migration
             $table->foreign('branch_id')->references('id')->on('branches')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedInteger('chapter_id');
+            $table->unsignedInteger('chapter_id')->nullable();
             $table->foreign('chapter_id')->references('id')->on('chapters')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedInteger('section_id');
+            $table->unsignedInteger('section_id')->nullable();
             $table->foreign('section_id')->references('id')->on('sections')
                 ->onDelete('cascade')->onUpdate('cascade');
 
